@@ -4,6 +4,10 @@
 ### Java template
 *.class
 
+.classpath
+
+.proyect
+
 <<<<<<< HEAD
 # BlueJ
 
@@ -230,3 +234,4 @@ TSWLatexianTemp*
 
 */target/**
 
+/bin/
