@@ -110,8 +110,8 @@ public class Home extends javax.swing.JFrame {
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Yay you clicked me");
             }
-
         });
+
 
         kGradientPanel2.add(jLabel10);
         jLabel10.setBounds(100, 0, 100, 40);
