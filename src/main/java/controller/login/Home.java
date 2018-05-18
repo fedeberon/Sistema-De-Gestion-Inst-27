@@ -5,6 +5,12 @@
  */
 package controller.login;
 
+
+import keeptoo.KGradientPanel;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 /**
  *
  * @author oXCToo
@@ -27,7 +33,7 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        kGradientPanel1 = new keeptoo.KGradientPanel();
+        kGradientPanel1 = new KGradientPanel();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -38,7 +44,7 @@ public class Home extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
+        kGradientPanel2 = new KGradientPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -69,15 +75,15 @@ public class Home extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("<html>\nSign Up\n<br>\nFor a free KeepToo account\n</html>");
+        jLabel3.setText("<html>\nLogin\n<br>\nIngrese credenciales\n</html>");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("firstname");
+        jLabel5.setText("Nombre");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("lastname");
+        jLabel6.setText("Apellido");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
@@ -98,7 +104,15 @@ public class Home extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("CONTINUE");
+        jLabel10.setText("INGRESAR");
+        jLabel10.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Yay you clicked me");
+            }
+
+        });
+
         kGradientPanel2.add(jLabel10);
         jLabel10.setBounds(100, 0, 100, 40);
 
@@ -153,31 +167,31 @@ public class Home extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("<html>\nUNDERSTANDING YOUR USERS BEFORE\n<br>\nBEFORE THAT CRAZY UPDATE\n");
+        jLabel1.setText("<html>\nProfesores\n<br>\nAlumnos\n<br>\nMaterias\n<br>\nProfesores\n");
         kGradientPanel1.add(jLabel1);
-        jLabel1.setBounds(130, 210, 370, 48);
+        jLabel1.setBounds(130, 210, 370, 100);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("*#####*");
+        jLabel2.setText("*Bolivar - Buenos Aires*");
         kGradientPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 100, 200, 20);
+        jLabel2.setBounds(140, 100, 400, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel4.setText("ANALYTICS SOFWARE");
+        jLabel4.setText("Sistema de Gestion.");
         kGradientPanel1.add(jLabel4);
-        jLabel4.setBounds(130, 170, 200, 40);
+        jLabel4.setBounds(130, 170, 400, 40);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home/grap.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grap.png"))); // NOI18N
         kGradientPanel1.add(jLabel9);
         jLabel9.setBounds(100, 330, 360, 200);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("KeepToo");
+        jLabel11.setText("Instituto de Formación Docente Nº 27");
         kGradientPanel1.add(jLabel11);
-        jLabel11.setBounds(130, 70, 200, 32);
+        jLabel11.setBounds(130, 70, 500, 32);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -245,7 +259,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
+    private KGradientPanel kGradientPanel1;
+    private KGradientPanel kGradientPanel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,7 @@
-package es.javiergarciaescobedo.javafxmaterialdesigntemplate;
+package controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -19,7 +20,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent screen0 = FXMLLoader.load(getClass().getResource("/fxml/Screen0.fxml"));
+
+            final URL location = this.getClass().getResource("/fxml/Screen0.fxml");
+
+            Parent screen0 = FXMLLoader.load(location);
             Scene scene = new Scene(screen0, 600, 400);
             primaryStage.setTitle("JavaFX Material Design Template");
             primaryStage.setScene(scene);
