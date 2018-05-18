@@ -1,4 +1,4 @@
-package es.javiergarciaescobedo.javafxmaterialdesigntemplate;
+package controller;
 
 import java.io.IOException;
 import java.util.logging.Level;
