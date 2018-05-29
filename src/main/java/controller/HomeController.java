@@ -8,9 +8,8 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,34 +31,76 @@ public class HomeController implements Initializable {
     private VBox pnl_scroll;
     
     @FXML
-    private void handleButtonAction(MouseEvent event) {        
+    private void handleButtonAction(MouseEvent event) throws IOException {
        refreshNodes();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-         refreshNodes();
+
+        try {
+            refreshNodes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }    
     
-    private void refreshNodes()
-    {
+    private void refreshNodes() throws IOException {
         pnl_scroll.getChildren().clear();
         
         Node [] nodes = new  Node[15];
-        
-        for(int i = 0; i<10; i++)
-        {
-            try {
-                nodes[i] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
-               pnl_scroll.getChildren().add(nodes[i]);
-                
-            } catch (IOException ex) {
-                Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-           
-        }  
+        Integer v = 1;
+
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
+        pnl_scroll.getChildren().add(nodes[v]);
+
+
+
     }
-    
+
+    public void btnAlumnos(ActionEvent actionEvent) throws IOException {
+
+        pnl_scroll.getChildren().clear();
+
+        Node [] nodes = new  Node[15];
+        Integer v = 1;
+
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Alumnos.fxml"));
+        pnl_scroll.getChildren().add(nodes[v]);
+
+    }
+
+
+
+
+    public void btnProfesores(ActionEvent actionEvent) throws IOException {
+
+
+
+        pnl_scroll.getChildren().clear();
+
+        Node [] nodes = new  Node[15];
+        Integer v = 1;
+
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
+        pnl_scroll.getChildren().add(nodes[v]);
+
+
+
+
+    }
+
+    public void btnCarreras(ActionEvent actionEvent) throws IOException {
+
+        pnl_scroll.getChildren().clear();
+
+        Node [] nodes = new  Node[15];
+        Integer v = 1;
+
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Alumnos.fxml"));
+        pnl_scroll.getChildren().add(nodes[v]);
+
+
+    }
 }
