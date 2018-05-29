@@ -14,9 +14,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- * Created by Damian on 11/05/2018.
- */
 public class InicioView extends Application {
 
         @Override

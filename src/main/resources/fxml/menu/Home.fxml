@@ -37,7 +37,8 @@
       </Pane>
       <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
          <children>
-            <Label prefHeight="30.0" prefWidth="252.0" text="MODULOS" textFill="#171717">
+
+            <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
                <font>
                   <Font size="13.0" />
                </font>
@@ -48,7 +49,9 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Label>
-            <JFXButton id= "Alumnos" onAction="#btnAlumnos" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Alumnos" textFill="#5b5858">
+
+            <!--Primer Boton menu lateral-->
+            <JFXButton alignment="BASELINE_LEFT" onAction="#btnAlumnos" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Alumnos" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -66,7 +69,9 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT"  onAction="#btnCarreras" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Carreras" textFill="#5b5858">
+
+            <!--Segundo Boton menu lateral-->
+            <JFXButton alignment="BASELINE_LEFT" onAction="#btnProfesores" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profesores" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -84,7 +89,9 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profesores" textFill="#5b5858">
+
+            <!--Tercer Boton menu lateral-->
+            <JFXButton alignment="BASELINE_LEFT" onAction="#btnCarreras" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Carreras" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -111,6 +118,7 @@
                   <Insets left="40.0" />
                </padding>
             </Label>
+
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Sponsorships" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
@@ -126,6 +134,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
+
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Mes Prices" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
@@ -141,6 +150,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
+
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Team" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
@@ -156,6 +166,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
+
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Agencies" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
@@ -174,6 +185,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
+
          </children>
       </VBox>
       <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
@@ -195,7 +207,8 @@
       </ScrollPane>
          <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0">
          <children>
-            <Label fx:id="lbl_currentprojects" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Current Projects(10)" textFill="#171717">
+            <!--Solapa 1-->
+            <Label fx:id="lbl_currentprojects" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Lista" textFill="#171717">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -203,7 +216,8 @@
                   <Insets left="40.0" />
                </padding>
             </Label>
-            <Label fx:id="lbl_pending" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Pending Projects(12)" textFill="#171717">
+            <!--Solapa 2-->
+            <Label fx:id="lbl_pending" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Crear" textFill="#171717">
                <font>
                   <Font size="13.0" />
                </font>
@@ -211,6 +225,7 @@
                   <Insets left="40.0" />
                </padding>
             </Label>
+            <!--Solapa 3-->
             <Label fx:id="lbl_completed" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Completed Projects(2)" textFill="#171717">
                <font>
                   <Font size="13.0" />
@@ -219,7 +234,8 @@
                   <Insets left="40.0" />
                </padding>
             </Label>
+
          </children>
-      </HBox>
+         </HBox>
    </children>
 </AnchorPane>
