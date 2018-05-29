@@ -11,10 +11,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -23,19 +25,19 @@ import javafx.scene.layout.VBox;
  *
  * @author oXCToo
  */
-public class HomeController implements Initializable {
+public class HomeController implements Initializable{
+    
+
     
     @FXML
-    private Label label;
-    
-      @FXML
     private VBox pnl_scroll;
-    
+
     @FXML
     private void handleButtonAction(MouseEvent event) {        
        refreshNodes();
     }
-    
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -43,23 +45,40 @@ public class HomeController implements Initializable {
          refreshNodes();
     }    
     
-    private void refreshNodes()
-    {
+    private void refreshNodes() {
+        //Panel vacio al iniciar el menu
+        pnl_scroll.setVisible(false);
         pnl_scroll.getChildren().clear();
         
         Node [] nodes = new  Node[15];
-        
-        for(int i = 0; i<10; i++)
+
+        for(int i = 0; i<1; i++)
         {
             try {
                 nodes[i] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
-               pnl_scroll.getChildren().add(nodes[i]);
-                
+                pnl_scroll.getChildren().add(nodes[i]);
+
             } catch (IOException ex) {
                 Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
             }
-           
-        }  
+
+        }
+
     }
-    
+
+
+
+        public void btnAlumnos(ActionEvent actionEvent) {
+
+        pnl_scroll.setVisible(true);
+
+
+        }
+
+    public void btnCarreras(ActionEvent actionEvent) {
+        pnl_scroll.setVisible(false);
+
+
+
+    }
 }

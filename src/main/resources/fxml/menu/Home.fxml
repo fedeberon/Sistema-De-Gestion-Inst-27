@@ -37,7 +37,7 @@
       </Pane>
       <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
          <children>
-            <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
+            <Label prefHeight="30.0" prefWidth="252.0" text="MODULOS" textFill="#171717">
                <font>
                   <Font size="13.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Label>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Projects lists" textFill="#5b5858">
+            <JFXButton id= "Alumnos" onAction="#btnAlumnos" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Alumnos" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -66,7 +66,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reliability" textFill="#5b5858">
+            <JFXButton alignment="BASELINE_LEFT"  onAction="#btnCarreras" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Carreras" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -84,7 +84,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Projections" textFill="#5b5858">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profesores" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -102,6 +102,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
+
             <Label prefHeight="30.0" prefWidth="252.0" text="ENTERPRISE" textFill="#171717">
                <font>
                   <Font size="13.0" />
