@@ -28,7 +28,7 @@ public class HomeController implements Initializable {
     @FXML
     private Label label;
     
-      @FXML
+    @FXML
     private VBox pnl_scroll;
     
     @FXML
