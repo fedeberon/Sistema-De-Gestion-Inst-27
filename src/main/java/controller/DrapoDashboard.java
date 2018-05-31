@@ -7,10 +7,8 @@ package controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -20,7 +18,7 @@ import javafx.stage.Stage;
 public class DrapoDashboard extends Application {
     
     @Override
-    public void start(final Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu/Home.fxml"));
 
         Scene scene = new Scene(root);
