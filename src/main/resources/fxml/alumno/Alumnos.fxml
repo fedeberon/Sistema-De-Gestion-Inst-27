@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Separator?>
+<AnchorPane id="AnchorPane" fx:controller="controller.alumnos.AlumnoController" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+
+      <Label fx:id="labelHolaMundo">HOLA</Label>   
+
+      <Separator prefWidth="820.0"></Separator>
+
+      <JFXButton alignment="BASELINE_LEFT" onAction="#btnAlumnos" graphicTextGap="10.0" prefHeight="43.0"
+                 prefWidth="252.0" ripplerFill="#bfadf8" text="Saludar" textFill="#5b5858">
+      </JFXButton>
+
+   </children>
+</AnchorPane>
