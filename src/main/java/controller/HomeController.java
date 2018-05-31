@@ -23,18 +23,18 @@ import javafx.scene.layout.VBox;
  * @author oXCToo
  */
 public class HomeController implements Initializable {
-    
+
     @FXML
     private Label label;
-    
-      @FXML
+
+    @FXML
     private VBox pnl_scroll;
-    
+
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
        refreshNodes();
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -44,63 +44,37 @@ public class HomeController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
-    
+    }
+
     private void refreshNodes() throws IOException {
         pnl_scroll.getChildren().clear();
-        
         Node [] nodes = new  Node[15];
         Integer v = 1;
-
         nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
-
-
-
     }
 
     public void btnAlumnos(ActionEvent actionEvent) throws IOException {
-
         pnl_scroll.getChildren().clear();
-
-        Node [] nodes = new  Node[15];
-        Integer v = 1;
-
-        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Alumnos.fxml"));
-        pnl_scroll.getChildren().add(nodes[v]);
-
+        Node [] nodes = new  Node[2];
+        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/alumno/Alumnos.fxml"));
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
-
-
-
     public void btnProfesores(ActionEvent actionEvent) throws IOException {
-
-
-
         pnl_scroll.getChildren().clear();
-
-        Node [] nodes = new  Node[15];
+        Node [] nodes = new  Node[2];
         Integer v = 1;
-
         nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
-
-
-
-
     }
 
     public void btnCarreras(ActionEvent actionEvent) throws IOException {
-
         pnl_scroll.getChildren().clear();
-
         Node [] nodes = new  Node[15];
         Integer v = 1;
-
-        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Alumnos.fxml"));
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Carreras.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
-
-
     }
+
 }
