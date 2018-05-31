@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.effect.DropShadow?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+
+      <Pane layoutX="29.0" layoutY="22.0" prefHeight="338.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+
+         <children>
+
+            <Label layoutX="32.0" layoutY="27.0" text="Carga de Alumnos" textFill="#3a1c9d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+
+            <Label layoutX="32.0" layoutY="85.0" prefHeight="25.0" prefWidth="49.0" text="Nombre" />
+            <TextField fx:id="campoNombre" layoutX="90.0" layoutY="85.0" prefHeight="25.0" prefWidth="123.0" />
+
+            <Label layoutX="239.0" layoutY="85.0" prefHeight="25.0" prefWidth="49.0" text="Apellido" />
+            <TextField fx:id="campoNombre1" layoutX="297.0" layoutY="85.0" prefHeight="25.0" prefWidth="123.0" />
+
+            <Label layoutX="446.0" layoutY="85.0" prefHeight="25.0" prefWidth="49.0" text="DNI" />
+            <TextField fx:id="campoNombre2" layoutX="504.0" layoutY="85.0" prefHeight="25.0" prefWidth="123.0" />
+
+
+            <Label layoutX="653.0" layoutY="85.0" prefHeight="25.0" prefWidth="49.0" text="Fec. Nac." />
+            <DatePicker layoutX="709.0" layoutY="85.0" prefHeight="25.0" prefWidth="123.0" />
+            <Separator layoutX="32.0" layoutY="61.0" prefWidth="820.0" />
+            <TextField fx:id="campoNombre3" layoutX="90.0" layoutY="129.0" prefHeight="25.0" prefWidth="123.0" />
+            <Label layoutX="32.0" layoutY="129.0" prefHeight="25.0" prefWidth="49.0" text="Cel." />
+            <TextField fx:id="campoNombre11" layoutX="297.0" layoutY="129.0" prefHeight="25.0" prefWidth="123.0" />
+            <Label layoutX="239.0" layoutY="129.0" prefHeight="25.0" prefWidth="56.0" text="Direccion" />
+            <TextField fx:id="campoNombre21" layoutX="504.0" layoutY="129.0" prefHeight="25.0" prefWidth="123.0" />
+            <Label layoutX="446.0" layoutY="129.0" prefHeight="25.0" prefWidth="49.0" text="E-Mail" />
+
+         </children>
+
+         <effect>
+            <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+
+        </Pane>
+
+        </children>
+        </AnchorPane>
