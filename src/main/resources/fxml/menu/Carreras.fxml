@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.carreras.CarreraController">
 
    <children>
 
@@ -31,23 +31,23 @@
             </Label>
 
             <!--Separador del titulo con el resto del panel-->
-            <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+            <Separator layoutX="41.0" layoutY="75.0" prefHeight="0.0" prefWidth="817.0" />
 
 
             <!--Campo Nombre-->
-            <Label layoutX="41.0" layoutY="152.0" text="Nombre:" />
-            <TextField layoutX="95.0" layoutY="148.0" prefHeight="25.0" prefWidth="340.0" />
+            <Label layoutX="34.0" layoutY="102.0" text="Nombre:" />
+            <TextField layoutX="95.0" layoutY="98.0" prefHeight="25.0" prefWidth="340.0" />
 
             <!--Campo Horario-->
-            <Label layoutX="473.0" layoutY="152.0" text="Horario:" />
-            <Label layoutX="525.0" layoutY="152.0" opacity="0.5" text="De" />
-            <TextField layoutX="549.0" layoutY="148.0" prefHeight="25.0" prefWidth="46.0" />
-            <Label layoutX="604.0" layoutY="152.0" opacity="0.5" text="a" />
-            <TextField layoutX="621.0" layoutY="148.0" prefHeight="25.0" prefWidth="46.0" />
+            <Label layoutX="473.0" layoutY="102.0" text="Horario:" />
+            <Label layoutX="525.0" layoutY="102.0" opacity="0.5" text="De" />
+            <TextField layoutX="549.0" layoutY="98.0" prefHeight="25.0" prefWidth="46.0" />
+            <Label layoutX="604.0" layoutY="102.0" opacity="0.5" text="a" />
+            <TextField layoutX="621.0" layoutY="98.0" prefHeight="25.0" prefWidth="46.0" />
 
             <!--Botones "Atras" y "Cargar Carrera"-->
-            <Button onAction="#buttonAtras" layoutX="257.0" layoutY="242.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
-            <Button layoutX="390.0" layoutY="242.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cargar Carrera" />
+            <Button layoutX="322.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
+            <Button layoutX="458.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cargar Carrera" />
 
             <!--Logo del panel"-->
             <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
