@@ -1,25 +1,23 @@
-package controller;
+package controller.main;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Javier García Escobedo <javiergarciaescobedo.es>
+ * Created by ISFDyT Nº 27 on 31/05/2018.
  */
 public class Main extends Application {
-    
-    @Override
-    public void start(Stage primaryStage) {
 
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login/login.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     /**
@@ -28,5 +26,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
+
 }
