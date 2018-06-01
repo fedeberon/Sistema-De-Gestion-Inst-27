@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" stylesheets="@/styles/material-design-styles.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane id="AnchorPane" stylesheets="@/styles/material-design-styles.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://jaafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <VBox fx:id="paneMainContainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
