@@ -77,4 +77,20 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
+
+    public void btnReporte(ActionEvent actionEvent) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node [] nodes = new  Node[15];
+        Integer v = 1;
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/reporte/Reportes.fxml"));
+        pnl_scroll.getChildren().add(nodes[v]);
+    }
+
+
+
+
+
+
+
+
 }
