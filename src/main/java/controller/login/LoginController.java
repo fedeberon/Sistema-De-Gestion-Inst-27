@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * Created by ISFDyT Nº 27 on 29/05/2018.
  */
-public class LoginController  {
+public class LoginController {
 
     @FXML
     public TextField username;
@@ -35,7 +35,7 @@ public class LoginController  {
     public void login(ActionEvent actionEvent) throws IOException {
         boolean esUnUsuarioValido = usuarioService.validarUsuarioYPassword(username.getText(), password.getText());
 
-        if(esUnUsuarioValido){
+        if (esUnUsuarioValido) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             System.out.print("El usuario es : " + username.getText() + " y el password es : " + password.getText());
             fxmlLoader.setLocation(getClass().getResource("/fxml/menu/Home.fxml"));
@@ -45,8 +45,6 @@ public class LoginController  {
             stage.setScene(scene);
             stage.show();
             ((Node) actionEvent.getSource()).getScene().getWindow().hide();
-        }
-
-        else mensajeValidacion.setText("El usuario o pass son incorrectos");
+        } else mensajeValidacion.setText("El usuario o pass son incorrectos");
     }
 }

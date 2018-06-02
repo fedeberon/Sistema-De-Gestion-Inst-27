@@ -232,8 +232,7 @@
 
             <children>
                 <!--Solapa 1-->
-                <Label fx:id="lbl_currentprojects" onMouseClicked="#handleButtonAction" prefHeight="30.0"
-                       prefWidth="207.0" text="Lista" textFill="#171717">
+                <Label fx:id="lbl_currentprojects" prefHeight="30.0" prefWidth="207.0" text="Lista" textFill="#171717">
                     <font>
                         <Font name="System Bold" size="13.0"/>
                     </font>
