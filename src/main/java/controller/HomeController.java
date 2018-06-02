@@ -28,11 +28,12 @@ public class HomeController implements Initializable {
     private Label label;
 
     @FXML
-    private VBox pnl_scroll;
+    public VBox pnl_scroll;
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
        refreshNodes();
+       pnl_scroll.setVisible(true);
     }
 
     @Override
@@ -71,10 +72,11 @@ public class HomeController implements Initializable {
 
     public void btnCarreras(ActionEvent actionEvent) throws IOException {
         pnl_scroll.getChildren().clear();
-        Node [] nodes = new  Node[15];
+        Node [] nodes = new  Node[2];
         Integer v = 1;
-        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Carreras.fxml"));
+        nodes[v] = (Node) FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
+        pnl_scroll.setVisible(true);
     }
 
 }
