@@ -16,4 +16,49 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+
+    <children>
+
+        <Pane layoutX="29.0" layoutY="22.0" prefHeight="338.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+
+            <children>
+
+                <!--Logo del panel"-->
+                <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/logoInstituto.png" />
+                    </image>
+                </ImageView>
+
+                        <!--Label titulo principal-->
+                <Label layoutX="111.0" layoutY="33.0" text="Reportes" textFill="#3a1c9d">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+
+                        <!--Separador del titulo con el resto del panel-->
+                <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+
+
+
+
+
+
+
+
+
+
+
+
+            </children>
+
+            <effect>
+                <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+            </effect>
+
+        </Pane>
+
+    </children>
+</AnchorPane>
