@@ -5,50 +5,41 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" style="-fx-background-color: #66C4E2;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: #FAFCFD;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
    <children>
-      <Label layoutX="240.0" layoutY="14.0" prefHeight="64.0" prefWidth="123.0" text="Login">
-         <font>
-            <Font name="Arial Bold" size="44.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="140.0" layoutY="77.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #3EACCF;">
+      <AnchorPane layoutX="141.0" layoutY="88.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #5DADE2;">
          <children>
 
-            <Label layoutX="53.0" layoutY="14.0" text="correo electronico ">
+            <Label layoutX="53.0" layoutY="14.0" text="Username">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
 
-            <TextField fx:id="username" layoutX="53.0" layoutY="50.0" prefHeight="25.0" prefWidth="207.0" text="Ingrese username" />
+            <TextField fx:id="username" layoutX="53.0" layoutY="50.0" prefHeight="25.0" prefWidth="207.0" promptText="Ingrese username" />
 
-            <Label layoutX="53.0" layoutY="85.0" prefHeight="36.0" prefWidth="149.0" text="contraseña">
+            <Label layoutX="53.0" layoutY="85.0" prefHeight="36.0" prefWidth="149.0" text="Password">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
 
             <PasswordField fx:id="password" layoutX="53.0" layoutY="121.0" prefHeight="25.0" prefWidth="207.0" />
-            <PasswordField
             <Button layoutX="79.0" layoutY="172.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="163.0" text="Ingresar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
 
-            <Label fx:id="mensajeValidacion" layoutX="119.0" layoutY="237.0" text="crear cuenta" textFill="#0e3ce4">
+            <Label fx:id="mensajeValidacion" layoutX="15.0" layoutY="238.0" text="Bienvenido usuario. " textAlignment="CENTER" textFill="#fc0008">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-
 
          </children>
       </AnchorPane>
@@ -64,9 +55,10 @@
             <Font name="Arial Italic" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="101.0" fitWidth="123.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/logoInstituto.png" />
-         </image></ImageView>
+      <Label layoutX="258.0" layoutY="37.0" text="login" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
