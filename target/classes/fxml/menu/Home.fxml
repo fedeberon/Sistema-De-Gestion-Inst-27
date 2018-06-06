@@ -131,8 +131,7 @@
                     </padding>
                 </Label>
 
-                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0"
-                           ripplerFill="#bfadf8" text="Sponsorships" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" onAction="#btnReporte" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte" textFill="#5b5858">
                     <font>
                         <Font size="13.0"/>
                     </font>

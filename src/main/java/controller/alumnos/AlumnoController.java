@@ -24,16 +24,20 @@ public class AlumnoController {
     @FXML
     ComboBox<String> comboBoxSexo = new ComboBox<String>();
 
-
-    public void btnAlumnos(ActionEvent actionEvent) {
-
-        System.out.print("Se ingreso " + textNombre.getText());
+    public void cargarAlumno(ActionEvent actionEvent) {
 
     }
 
 
-    public void guardar(ActionEvent actionEvent) {
-        System.out.print("Se ingreso " + textNombre.getText());
-
-    }
+//    public void btnAlumnos(ActionEvent actionEvent) {
+//
+//        System.out.print("Se ingreso " + textNombre.getText());
+//
+//    }
+//
+//
+//    public void guardar(ActionEvent actionEvent) {
+//        System.out.print("Se ingreso " + textNombre.getText());
+//
+//    }
 }
