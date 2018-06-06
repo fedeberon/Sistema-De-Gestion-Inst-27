@@ -11,33 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: #FAFCFD;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
    <children>
-<<<<<<< HEAD
-      <AnchorPane layoutX="141.0" layoutY="88.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #3EACCF;">
-=======
-      <Label layoutX="144.0" layoutY="14.0" prefHeight="79.0" prefWidth="311.0" text="Login" textAlignment="CENTER">
-=======
-<<<<<<< HEAD
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: #FAFCFD;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
-   <children>
       <AnchorPane layoutX="141.0" layoutY="88.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #5DADE2;">
-=======
-<<<<<<< HEAD
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" style="-fx-background-color: #66C4E2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
-   <children>
-      <Label layoutX="144.0" layoutY="14.0" prefHeight="79.0" prefWidth="311.0" text="Login" textAlignment="CENTER">
-=======
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" style="-fx-background-color: #66C4E2;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
-   <children>
-      <Label layoutX="240.0" layoutY="14.0" prefHeight="64.0" prefWidth="123.0" text="Login">
->>>>>>> f53313cf1224ff6da2a134b0ec46d24ab2525840
->>>>>>> ddd6a579306dd54ff4b459fe1f083288b5c76116
-         <font>
-            <Font name="Arial Bold" size="44.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="140.0" layoutY="77.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #3EACCF;">
->>>>>>> 216af5e3f46d24ab2f8a04c41975c3f6cf996dbb
->>>>>>> 98747ede22dacc233df857a6756379f95c92786c
          <children>
 
             <Label layoutX="53.0" layoutY="14.0" text="Username">
@@ -55,21 +29,6 @@
             </Label>
 
             <PasswordField fx:id="password" layoutX="53.0" layoutY="121.0" prefHeight="25.0" prefWidth="207.0" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
-            <PasswordField
->>>>>>> f53313cf1224ff6da2a134b0ec46d24ab2525840
->>>>>>> 216af5e3f46d24ab2f8a04c41975c3f6cf996dbb
->>>>>>> ddd6a579306dd54ff4b459fe1f083288b5c76116
->>>>>>> 98747ede22dacc233df857a6756379f95c92786c
             <Button layoutX="79.0" layoutY="172.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="163.0" text="Ingresar">
                <font>
                   <Font name="Arial" size="12.0" />
@@ -96,27 +55,10 @@
             <Font name="Arial Italic" size="18.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <AnchorPane layoutX="4.0" prefHeight="90.0" prefWidth="592.0" style="-fx-background-color: #FAFCFD;">
-         <children>
-            <ImageView fitHeight="90.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/logoInstituto.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="249.0" layoutY="13.0" prefHeight="64.0" prefWidth="103.0" text="Login">
-               <font>
-                  <Font name="Arial Bold" size="35.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-=======
       <Label layoutX="258.0" layoutY="37.0" text="login" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="35.0" />
          </font>
       </Label>
->>>>>>> 98747ede22dacc233df857a6756379f95c92786c
    </children>
 </Pane>

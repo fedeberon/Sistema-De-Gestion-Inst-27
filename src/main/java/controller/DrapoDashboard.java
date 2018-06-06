@@ -5,7 +5,6 @@
  */
 package controller;
 
-import com.sun.deploy.uitoolkit.impl.fx.AppletStageManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
