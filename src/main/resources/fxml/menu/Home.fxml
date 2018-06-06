@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0"
-            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1"
+<AnchorPane fx:id="menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0"  style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
     <children>
         <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background"
@@ -221,13 +220,16 @@
             </effect>
         </Pane>
 
-        <ScrollPane layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0"
+        <ScrollPane fx:id="contenido" layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0"
                     style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0"
                     AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
             <content>
                 <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;"/>
             </content>
         </ScrollPane>
+
+
+
 
         <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0">
 
