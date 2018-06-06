@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -23,12 +24,15 @@ import java.util.ResourceBundle;
  * @author oXCToo
  */
 public class HomeController implements Initializable {
-
     @FXML
     private Label label;
 
     @FXML
     public VBox pnl_scroll;
+
+    @FXML
+    public AnchorPane menu;
+
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
@@ -80,6 +84,8 @@ public class HomeController implements Initializable {
     }
 
 
+<<<<<<< HEAD
+=======
     public void btnReporte(ActionEvent actionEvent) throws IOException {
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[15];
@@ -89,5 +95,6 @@ public class HomeController implements Initializable {
     }
 
 
+>>>>>>> ddd6a579306dd54ff4b459fe1f083288b5c76116
 
 }

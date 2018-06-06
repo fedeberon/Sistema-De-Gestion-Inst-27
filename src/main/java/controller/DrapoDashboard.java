@@ -5,6 +5,7 @@
  */
 package controller;
 
+import com.sun.deploy.uitoolkit.impl.fx.AppletStageManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,14 +17,25 @@ import javafx.stage.Stage;
  * @author oXCToo
  */
 public class DrapoDashboard extends Application {
-    
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu/Home.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+
+    private static Stage primaryStage;
+
+    private void setPrimaryStage(Stage stage) {
+        DrapoDashboard.primaryStage = stage;
     }
 
+    static public Stage getPrimaryStage() {
+        return DrapoDashboard.primaryStage;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        setPrimaryStage(primaryStage);
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu/Home.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
 }

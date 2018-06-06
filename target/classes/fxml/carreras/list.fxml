@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<?import javafx.scene.control.TableView?>
+<TableView id="tablaCarrera" layoutX="14.0" layoutY="28.0" prefHeight="353.0" prefWidth="573.0" >
+    <columns></columns>
+</TableView>
+=======
+>>>>>>> 98747ede22dacc233df857a6756379f95c92786c
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,3 +22,7 @@
       <Label layoutX="204.0" layoutY="6.0" prefHeight="17.0" prefWidth="169.0" text="Lista de Carreras" />
    </children>
 </Pane>
+<<<<<<< HEAD
+=======
+>>>>>>> ddd6a579306dd54ff4b459fe1f083288b5c76116
+>>>>>>> 98747ede22dacc233df857a6756379f95c92786c

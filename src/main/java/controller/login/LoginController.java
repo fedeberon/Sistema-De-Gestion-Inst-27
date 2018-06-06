@@ -31,7 +31,6 @@ public class LoginController {
 
     private UsuarioService usuarioService = new UsuarioService();
 
-
     public void login(ActionEvent actionEvent) throws IOException {
         boolean esUnUsuarioValido = usuarioService.validarUsuarioYPassword(username.getText(), password.getText());
 
@@ -45,6 +44,6 @@ public class LoginController {
             stage.setScene(scene);
             stage.show();
             ((Node) actionEvent.getSource()).getScene().getWindow().hide();
-        } else mensajeValidacion.setText("El usuario o pass son incorrectos");
+        } else mensajeValidacion.setText("x El usuario o password son incorrectos");
     }
 }
