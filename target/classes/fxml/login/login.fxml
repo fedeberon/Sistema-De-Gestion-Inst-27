@@ -9,26 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: #FAFCFD;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
    <children>
       <AnchorPane layoutX="141.0" layoutY="88.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #5DADE2;">
-=======
-<<<<<<< HEAD
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" style="-fx-background-color: #66C4E2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
-   <children>
-      <Label layoutX="144.0" layoutY="14.0" prefHeight="79.0" prefWidth="311.0" text="Login" textAlignment="CENTER">
-=======
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" style="-fx-background-color: #66C4E2;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
-   <children>
-      <Label layoutX="240.0" layoutY="14.0" prefHeight="64.0" prefWidth="123.0" text="Login">
->>>>>>> f53313cf1224ff6da2a134b0ec46d24ab2525840
-         <font>
-            <Font name="Arial Bold" size="44.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="140.0" layoutY="77.0" prefHeight="279.0" prefWidth="321.0" style="-fx-background-color: #3EACCF;">
->>>>>>> 216af5e3f46d24ab2f8a04c41975c3f6cf996dbb
          <children>
 
             <Label layoutX="53.0" layoutY="14.0" text="Username">
@@ -45,22 +28,14 @@
                </font>
             </Label>
 
-            <PasswordField fx:id="password" layoutX="53.0" layoutY="121.0" prefHeight="25.0" prefWidth="207.0" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
-            <PasswordField
->>>>>>> f53313cf1224ff6da2a134b0ec46d24ab2525840
->>>>>>> 216af5e3f46d24ab2f8a04c41975c3f6cf996dbb
+            <PasswordField fx:id="password" layoutX="53.0" layoutY="121.0" prefHeight="25.0" prefWidth="207.0" promptText="ingrese password" />
             <Button layoutX="79.0" layoutY="172.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="163.0" text="Ingresar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
 
-            <Label fx:id="mensajeValidacion" layoutX="15.0" layoutY="238.0" text="Bienvenido usuario. " textAlignment="CENTER" textFill="#fc0008">
+            <Label fx:id="mensajeValidacion" layoutX="15.0" layoutY="238.0" text="Bienvenido usuario." textAlignment="CENTER" textFill="#fc0008">
                <font>
                   <Font size="14.0" />
                </font>

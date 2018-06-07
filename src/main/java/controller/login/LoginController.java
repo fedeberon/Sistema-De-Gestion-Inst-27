@@ -28,7 +28,6 @@ public class LoginController {
     @FXML
     public Label mensajeValidacion;
 
-
     private UsuarioService usuarioService = new UsuarioService();
 
     public void login(ActionEvent actionEvent) throws IOException {

@@ -1,6 +1,7 @@
 package service.usuario;
 
 import dao.usuario.UsuarioRepository;
+import domain.Usuario;
 
 public class UsuarioService {
 
@@ -8,6 +9,10 @@ public class UsuarioService {
 
     public boolean validarUsuarioYPassword(String username, String password){
         return dao.validarUsuarioYPassword(username, password);
+    }
+
+    public Usuario get(String username){
+        return dao.get(username);
     }
 
 
