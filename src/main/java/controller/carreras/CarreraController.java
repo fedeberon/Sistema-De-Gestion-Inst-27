@@ -1,6 +1,6 @@
 package controller.carreras;
 
-import controller.HomeController;
+import controller.DrapoDashboard;
 import domain.carrera.Carrera;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,10 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import service.carreras.CarreraService;
 
@@ -22,36 +20,28 @@ import java.io.IOException;
  */
 public class CarreraController {
 
-
-    private CarreraService carreraService;
-
-    @FXML
-    public TableView tablaCarrera;
-
-    public TableColumn colNombre = new TableColumn("Nombre");
-    public TableColumn colInici = new TableColumn("Inicio");
-    public TableColumn colFin = new TableColumn("Fin");
+    private CarreraService carreraService = new CarreraService();
 
     @FXML
-    public TextField txtAtras;
+    public TableView tablaCarrera = new TableView();
 
 
     public void guardarCarrera(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/menu/Home.fxml"));
-        HomeController controller = loader.getController();
-        controller.pnl_scroll.getChildren().clear();
+        Stage s = DrapoDashboard.getPrimaryStage();
+
         Node [] nodes = new  Node[2];
         Integer v = 1;
-        nodes[v] = (Node) FXMLLoader.load(getClass().getResource("/fxml/carreras/list.fxml"));
-        controller.pnl_scroll.getChildren().add(nodes[v]);
-        controller.pnl_scroll.setVisible(true);
+        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/carreras/list.fxml"));
 
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        pnl_scroll.getChildren().add(nodes[v]);
+        pnl_scroll.setVisible(true);
 
-        tablaCarrera.getColumns().addAll(colNombre, colInici, colFin);
-        tablaCarrera.setItems(findAll());
+//        tablaCarrera.getColumns().addAll(colNombre, colInici, colFin);
+//        tablaCarrera.setItems(findAll());
+
     }
-
-
 
     private ObservableList<Carrera> findAll(){
         return FXCollections.observableArrayList(carreraService.findAll());

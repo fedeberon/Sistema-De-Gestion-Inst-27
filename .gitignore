@@ -20,7 +20,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.ear
 
@@ -233,5 +233,6 @@ TSWLatexianTemp*
 /auto/*
 
 */target/**
+
 
 /bin/
