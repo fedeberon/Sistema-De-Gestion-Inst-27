@@ -1,19 +1,20 @@
 package dao.usuario;
 
 import domain.Usuario;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.EntityManager;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by ISFDyT Nº 27 on 31/05/2018.
  */
-public class UsuarioRepository {
+public class UsuarioRepository{
 
-    SessionFactory sf = new Configuration().configure().buildSessionFactory();
+    @Autowired
+    SessionFactory sessionFactory;
 
 
 
@@ -25,11 +26,17 @@ public class UsuarioRepository {
     }
 
     public Usuario get(String username) {
-        return em.get;
+        Session session = sessionFactory.openSession();
+
+        return (Usuario) session.get(Usuario.class, username);
     }
 
     public List<Usuario> findAll() {
-        return Collections.emptyList();
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Usuario");
+        List list = query.list();
+
+        return list;
     }
 
     public Usuario save() {
