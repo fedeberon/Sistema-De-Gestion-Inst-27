@@ -1,8 +1,10 @@
 package dao.usuario;
 
 import domain.Usuario;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import java.util.Collections;
@@ -13,7 +15,8 @@ import java.util.List;
  */
 public class UsuarioRepository {
 
-    SessionFactory sf = new Configuration().configure().buildSessionFactory();
+   @Autowired
+   private SessionFactory sessionFactory;
 
 
 
@@ -25,7 +28,9 @@ public class UsuarioRepository {
     }
 
     public Usuario get(String username) {
-        return em.get;
+        Session session = sessionFactory.openSession();
+
+        return (Usuario) session.get(Usuario.class, username);
     }
 
     public List<Usuario> findAll() {

@@ -10,14 +10,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 
 /**
  *
  * @author oXCToo
  */
+@Configuration
 public class DrapoDashboard extends Application {
-
-
     private static Stage primaryStage;
 
     private void setPrimaryStage(Stage stage) {
@@ -38,7 +39,9 @@ public class DrapoDashboard extends Application {
     }
 
     public static void main(String[] args) {
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(DrapoDashboard.class);
+        ctx.refresh();
         launch(args);
     }
-
 }
