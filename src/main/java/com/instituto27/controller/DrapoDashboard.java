@@ -10,15 +10,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Configuration;
 
 /**
  *
  * @author oXCToo
  */
-@Configuration
+
+
 public class DrapoDashboard extends Application {
+
     private static Stage primaryStage;
 
     private void setPrimaryStage(Stage stage) {
@@ -31,7 +31,7 @@ public class DrapoDashboard extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        setPrimaryStage(primaryStage);
+        setPrimaryStage(primaryStage    );
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu/Home.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
@@ -39,9 +39,8 @@ public class DrapoDashboard extends Application {
     }
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.register(DrapoDashboard.class);
-        ctx.refresh();
         launch(args);
     }
+
+
 }

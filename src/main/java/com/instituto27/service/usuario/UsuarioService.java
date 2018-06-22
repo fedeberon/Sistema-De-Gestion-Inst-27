@@ -2,10 +2,15 @@ package service.usuario;
 
 import dao.usuario.UsuarioRepository;
 import domain.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class UsuarioService {
 
-    private UsuarioRepository dao = new UsuarioRepository();
+    @Autowired
+    private UsuarioRepository dao;
 
     public boolean validarUsuarioYPassword(String username, String password){
         return dao.validarUsuarioYPassword(username, password);
