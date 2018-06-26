@@ -1,4 +1,4 @@
-package main;
+package com.instituto27.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
