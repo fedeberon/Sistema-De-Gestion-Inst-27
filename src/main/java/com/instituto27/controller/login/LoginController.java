@@ -1,7 +1,5 @@
 package controller.login;
 
-import config.AppConfig;
-import controller.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,13 +10,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import service.usuario.UsuarioService;
 
 import java.io.IOException;
 
-
-@Controller
+/**
+ * Created by ISFDyT Nº 27 on 29/05/2018.
+ */
+@Component
 public class LoginController {
 
     @FXML
@@ -34,7 +34,6 @@ public class LoginController {
     private UsuarioService usuarioService;
 
     public void login(ActionEvent actionEvent) throws IOException {
-
         boolean esUnUsuarioValido = usuarioService.validarUsuarioYPassword(username.getText(), password.getText());
 
         if (esUnUsuarioValido) {

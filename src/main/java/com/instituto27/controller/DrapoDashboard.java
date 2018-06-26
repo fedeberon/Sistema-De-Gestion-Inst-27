@@ -10,15 +10,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author oXCToo
  */
-public class DrapoDashboard extends Application {
 
+
+public class DrapoDashboard extends Application {
 
     private static Stage primaryStage;
 
@@ -32,7 +32,7 @@ public class DrapoDashboard extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        setPrimaryStage(primaryStage);
+        setPrimaryStage(primaryStage    );
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu/Home.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
