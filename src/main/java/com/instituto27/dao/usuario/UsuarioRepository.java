@@ -1,6 +1,6 @@
-package dao.usuario;
+package com.instituto27.dao.usuario;
 
-import domain.Usuario;
+import com.instituto27.domain.Usuario;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

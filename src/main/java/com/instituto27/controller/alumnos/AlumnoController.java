@@ -6,10 +6,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.springframework.stereotype.Controller;
 
 /**
  * Created by ISFDyT Nº 27 on 30/05/2018.
  */
+
+@Controller
 public class AlumnoController {
 
     @FXML
