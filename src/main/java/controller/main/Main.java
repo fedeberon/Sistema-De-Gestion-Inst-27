@@ -1,5 +1,6 @@
 package controller.main;
 
+import config.AppConfig;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,13 +8,15 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+import service.usuario.UsuarioService;
 
-import javax.imageio.ImageIO;
 
-/**
- * Created by ISFDyT Nº 27 on 31/05/2018.
- */
+
+
+@Component
 public class Main extends Application {
 
 
@@ -32,8 +35,12 @@ public class Main extends Application {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.register(AppConfig.class);
+        context.refresh();
+
         launch(args);
     }
 

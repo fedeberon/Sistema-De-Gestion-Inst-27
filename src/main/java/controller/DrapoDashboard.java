@@ -40,8 +40,11 @@ public class DrapoDashboard extends Application {
     }
 
     public static void main(String[] args) {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         launch(args);
     }
+
+
 
 
 }

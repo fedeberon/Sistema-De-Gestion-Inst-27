@@ -1,6 +1,7 @@
 package controller.login;
 
-import controller.DrapoDashboard;
+import config.AppConfig;
+import controller.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +11,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import service.usuario.UsuarioService;
 
 import java.io.IOException;
 
-/**
- * Created by ISFDyT Nº 27 on 29/05/2018.
- */
+
+@Controller
 public class LoginController {
 
     @FXML
@@ -28,9 +30,11 @@ public class LoginController {
     @FXML
     public Label mensajeValidacion;
 
-    private UsuarioService usuarioService = new UsuarioService();
+    @Autowired
+    private UsuarioService usuarioService;
 
     public void login(ActionEvent actionEvent) throws IOException {
+
         boolean esUnUsuarioValido = usuarioService.validarUsuarioYPassword(username.getText(), password.getText());
 
         if (esUnUsuarioValido) {
