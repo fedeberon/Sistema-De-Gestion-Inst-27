@@ -1,7 +1,7 @@
-package service.usuario;
+package com.instituto27.service.usuario;
 
-import dao.usuario.UsuarioRepository;
-import domain.Usuario;
+import com.instituto27.dao.usuario.UsuarioRepository;
+import com.instituto27.domain.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

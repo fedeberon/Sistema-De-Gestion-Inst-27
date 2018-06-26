@@ -1,4 +1,4 @@
-package domain;
+package com.instituto27.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
