@@ -1,4 +1,4 @@
-package domain;
+package com.instituto27.domain;
 
 /**
  * Created by ISFDyT Nº 27 on 07/06/2018.

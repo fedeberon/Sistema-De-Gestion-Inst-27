@@ -1,4 +1,4 @@
-package service.profesor.validar;
+package com.instituto27.service.profesor.validar;
 
 /**
  * Created by Alan on 5/6/2018.

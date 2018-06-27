@@ -1,4 +1,4 @@
-package domain.carrera;
+package com.instituto27.domain.carrera;
 
 /**
  * Created by ISFDyT Nº 27 on 31/05/2018.

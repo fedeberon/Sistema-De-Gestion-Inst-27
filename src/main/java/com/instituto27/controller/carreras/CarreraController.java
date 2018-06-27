@@ -1,7 +1,7 @@
-package controller.carreras;
+package com.instituto27.controller.carreras;
 
-import controller.DrapoDashboard;
-import domain.carrera.Carrera;
+import com.instituto27.controller.DrapoDashboard;
+import com.instituto27.domain.carrera.Carrera;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,7 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import service.carreras.CarreraService;
+import com.instituto27.service.carreras.CarreraService;
 
 import java.io.IOException;
 

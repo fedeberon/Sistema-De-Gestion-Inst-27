@@ -1,4 +1,4 @@
-package controller.alumnos;
+package com.instituto27.controller.alumnos;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

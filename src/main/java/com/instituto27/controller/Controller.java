@@ -1,4 +1,4 @@
-package controller;
+package com.instituto27.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

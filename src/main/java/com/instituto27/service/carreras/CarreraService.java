@@ -1,6 +1,6 @@
-package service.carreras;
+package com.instituto27.service.carreras;
 
-import domain.carrera.Carrera;
+import com.instituto27.domain.carrera.Carrera;
 
 import java.lang.reflect.Array;
 import java.util.Collection;

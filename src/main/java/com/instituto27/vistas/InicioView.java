@@ -1,4 +1,4 @@
-package vistas;
+package com.instituto27.vistas;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

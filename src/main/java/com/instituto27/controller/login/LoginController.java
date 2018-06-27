@@ -1,4 +1,4 @@
-package controller.login;
+package com.instituto27.controller.login;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import service.usuario.UsuarioService;
+import com.instituto27.service.usuario.UsuarioService;
 
 import java.io.IOException;
 
