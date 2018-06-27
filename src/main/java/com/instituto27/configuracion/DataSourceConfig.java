@@ -44,8 +44,7 @@ public class DataSourceConfig {
         // See: application.properties
         properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));
         properties.put("hibernate.show_sql", env.getProperty("spring.jpa.show-sql"));
-        properties.put("current_session_context_class", //
-                env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
+        //properties.put("current_session_context_class", env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
 
 
         // Fix Postgres JPA Error:
