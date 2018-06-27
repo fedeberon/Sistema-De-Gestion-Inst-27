@@ -20,10 +20,10 @@ public class Usuario {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "NOMBRE")
+    @Column(name = "USU_NOMBRE")
     private String nombre;
 
-    @Column(name = "APELLIDO")
+    @Column(name = "USU_APELLIDO")
     private String apellido;
 
     public String getUsername() {

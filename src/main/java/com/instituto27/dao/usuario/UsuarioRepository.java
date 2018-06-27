@@ -38,6 +38,17 @@ public class UsuarioRepository{
         return session.get(Usuario.class, username);
     }
 
+
+    public Usuario save(Usuario usuario) {
+        Session session = sessionFactory.openSession();
+        session.save(usuario);
+
+        return usuario;
+    }
+
+
+
+
     public List<Usuario> findAll() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("from Usuario");
@@ -45,10 +56,5 @@ public class UsuarioRepository{
 
         return list;
     }
-
-    public Usuario save() {
-        return new Usuario();
-    }
-
 
 }
