@@ -3,10 +3,10 @@ package com.instituto27.service.usuario;
 import com.instituto27.dao.usuario.UsuarioRepository;
 import com.instituto27.domain.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 
-@Component
+@Service
 public class UsuarioService {
 
     @Autowired

@@ -16,7 +16,7 @@ import org.springframework.context.annotation.PropertySource;
  * Created by ISFDyT Nº 27 on 31/05/2018.
  */
 
-@ComponentScan("controller")
+@ComponentScan("com.instituto27")
 @PropertySource("classpath:application.properties")
 @SpringBootApplication
 public class Main extends Application {

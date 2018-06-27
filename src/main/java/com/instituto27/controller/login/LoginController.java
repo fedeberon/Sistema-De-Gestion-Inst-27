@@ -1,4 +1,4 @@
-package controller.login;
+package com.instituto27.controller.login;
 
 import com.instituto27.service.usuario.UsuarioService;
 import javafx.event.ActionEvent;
