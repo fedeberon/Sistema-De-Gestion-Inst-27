@@ -1,5 +1,6 @@
 package com.instituto27.controller.login;
 
+import com.instituto27.domain.Usuario;
 import com.instituto27.service.usuario.UsuarioService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,7 +43,11 @@ public class LoginController {
             fxmlLoader.setLocation(getClass().getResource("/fxml/menu/Home.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
-            stage.setTitle("Usuario " + username.getText());
+
+            Usuario usuario = usuarioService.get(username.getText());
+            stage.setTitle("Usuario: " + usuario.getNombre() +  " " + usuario.getApellido());
+
+
             stage.setScene(scene);
             stage.show();
             ((Node) actionEvent.getSource()).getScene().getWindow().hide();
