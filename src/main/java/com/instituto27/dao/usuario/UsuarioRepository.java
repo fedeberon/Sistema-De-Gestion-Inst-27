@@ -21,7 +21,12 @@ public class UsuarioRepository{
 
 
     public boolean validarUsuarioYPassword(String username, String password){
-        if(username.equalsIgnoreCase("fede") && password.equals("fede")){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Usuario where username =:username and password =:password");
+        query.setParameter("username", username);
+        query.setParameter("password", password);
+
+        if(query.list().size() > 0l){
             return true;
         }
         else return false;
@@ -30,7 +35,7 @@ public class UsuarioRepository{
     public Usuario get(String username) {
         Session session = sessionFactory.openSession();
 
-        return (Usuario) session.get(Usuario.class, username);
+        return session.get(Usuario.class, username);
     }
 
     public List<Usuario> findAll() {
