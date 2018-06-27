@@ -1,6 +1,6 @@
-package service.profesor;
+package com.instituto27.service.profesor;
 
-import service.profesor.validar.ValidacionDeString;
+import com.instituto27.service.profesor.validar.ValidacionDeString;
 
 /**
  * Created by Alan on 5/6/2018.

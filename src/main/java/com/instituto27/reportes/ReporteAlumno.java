@@ -1,4 +1,4 @@
-package reportes;
+package com.instituto27.reportes;
 
 
 import javafx.application.Application;
