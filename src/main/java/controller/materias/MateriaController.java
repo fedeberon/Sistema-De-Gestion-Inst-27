@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,6 +20,14 @@ public class MateriaController {
     @FXML
     public Button btnCrearCarrera;
 
+    @FXML
+    public TextField materia;
+
+    @FXML
+    public TextField profesor;
+
+    @FXML
+    public Button btnGuardar;
     public void crearCarrera(ActionEvent actionEvent) throws IOException {
 
         Node[] nodes = new  Node[2];
@@ -31,6 +40,11 @@ public class MateriaController {
         pnl_scroll.getChildren().add(nodes[v]);
 
 
+    }
+
+    public void btnGuardar(ActionEvent actionEvent) throws IOException {
+
+        System.out.print("materia : " + materia.getText() + "  profesor : " + profesor.getText());
     }
 }
 

@@ -86,7 +86,7 @@ public class HomeController implements Initializable {
     public void btnMaterias(ActionEvent actionEvent) throws IOException {
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
-        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Materias.fxml"));
+        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/materias/Materias.fxml"));
         pnl_scroll.getChildren().add(nodes[1]);
     }
 
