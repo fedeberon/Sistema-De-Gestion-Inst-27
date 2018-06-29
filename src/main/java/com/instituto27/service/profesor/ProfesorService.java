@@ -13,7 +13,7 @@ public class ProfesorService {
     }
 
     public boolean verificarTexto(String text) {
-        return validar.chequearTexto(text, 0);
+        return validar.chequearTexto(text);
     }
 
     public boolean verificarNumero(String text) {
@@ -24,4 +24,8 @@ public class ProfesorService {
         String[] cuil = {text, text1, text2};
         return validar.chequearCuil(cuil);
     }
+
+    public boolean verificarFecha(String promptText) {return validar.chequearFecha(promptText);}
+
+
 }

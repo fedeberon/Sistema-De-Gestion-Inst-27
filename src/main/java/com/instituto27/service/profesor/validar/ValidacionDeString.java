@@ -1,5 +1,19 @@
 package com.instituto27.service.profesor.validar;
 
+import javafx.util.converter.LocalDateStringConverter;
+
+import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Created by Alan on 5/6/2018.
  */
@@ -15,15 +29,10 @@ public class ValidacionDeString {
             }
         }
 
-        if(cantidadDeEspacios == text.length()){
-            cantidadDeEspacios = 0;
-            return false;
-        }else{
-            return true;
-        }
+        return cantidadDeEspacios != text.length();
     }
 
-    public boolean chequearTexto(String text, int indispensable){
+    public boolean chequearTexto(String text){
         /*Comprueba si el texto contiene caracteres que no deberian ir (numeros, simbolos,
         ademas verifica que ,aunque los espacios si esten permitidos, el string no este compuesto solo por espacios.*/
 
@@ -53,7 +62,7 @@ public class ValidacionDeString {
         if(text.equals("")){
             return false;
         }else{
-            return chequearTexto(text, 1);
+            return chequearTexto(text);
         }
     }
 
@@ -73,10 +82,25 @@ public class ValidacionDeString {
         if(cuil[1].length()!=8 || !chequearNumero(cuil[1])){
             return false;
         }
-        if(cuil[2].length()!=1 || !chequearNumero(cuil[2])){
-            return false;
+        return !(cuil[2].length() != 1 || !chequearNumero(cuil[2]));
+
+    }
+
+    public boolean chequearFecha(String promptText) {
+        if(promptText.isEmpty()){return true;}
+        for(char i : promptText.toCharArray()){
+            if (!Character.isDigit(i) && i != '/') {
+                return false;
+            }
         }
 
+        try {
+            DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+            sourceFormat.setLenient(false);
+            Date date = sourceFormat.parse(promptText);
+        } catch (ParseException e) {
+            return false;
+        }
         return true;
     }
 }
