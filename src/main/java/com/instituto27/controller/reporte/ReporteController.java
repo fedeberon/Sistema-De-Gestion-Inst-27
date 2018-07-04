@@ -16,7 +16,7 @@ public class ReporteController {
 
 
     public void btnProfesores(ActionEvent actionEvent) throws IOException {
-        Stage s = DrapoDashboard.getPrimaryStage();
+        Stage s = Main.getPrimaryStage();
 
         VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
 
