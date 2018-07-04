@@ -11,7 +11,7 @@ import java.time.LocalDate;
  */
 
 @Entity
-@Table(name = "ALUMNOS")
+@Table(name = "alumnos")
 public class Alumno {
 
     @Id
