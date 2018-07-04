@@ -1,6 +1,7 @@
 package com.instituto27.controller.login;
 
 import com.instituto27.domain.Usuario;
+import com.instituto27.main.Main;
 import com.instituto27.service.usuario.UsuarioService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +51,7 @@ public class LoginController {
 
             stage.setScene(scene);
             stage.show();
+            Main.primaryStage = stage;
             ((Node) actionEvent.getSource()).getScene().getWindow().hide();
         } else mensajeValidacion.setText("x El usuario o password son incorrectos");
     }

@@ -1,7 +1,7 @@
 package com.instituto27.controller.carreras;
 
-import com.instituto27.controller.DrapoDashboard;
 import com.instituto27.domain.carrera.Carrera;
+import com.instituto27.main.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +27,7 @@ public class CarreraController {
 
 
     public void guardarCarrera(ActionEvent actionEvent) throws IOException {
-        Stage s = DrapoDashboard.getPrimaryStage();
+        Stage s = Main.getPrimaryStage();
 
         Node [] nodes = new  Node[2];
         Integer v = 1;
