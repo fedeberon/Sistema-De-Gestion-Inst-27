@@ -24,6 +24,16 @@ public class Main extends Application {
     private ConfigurableApplicationContext springContext;
     Parent root;
 
+    public static Stage primaryStage;
+
+    public void setPrimaryStage(Stage stage) {
+        Main.primaryStage = stage;
+    }
+
+    static public Stage getPrimaryStage() {
+        return Main.primaryStage;
+    }
+
     public static void main(String[] args) {
         Application.launch(Main.class, args);
     }
