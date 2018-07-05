@@ -1,8 +1,11 @@
 package com.instituto27.domain.carrera;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by ISFDyT Nº 27 on 31/05/2018.
  */
+@Component
 public class Carrera {
 
     private Long id;

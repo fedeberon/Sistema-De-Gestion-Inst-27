@@ -14,38 +14,39 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import com.instituto27.service.carreras.CarreraService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 /**
  * Created by ISFDyT Nº 27 on 30/05/2018.
  */
+@Component
 public class CarreraController {
+    public TextField tfTurno;
+    public TextField tfNombre;
 
-    private CarreraService carreraService = new CarreraService();
+
+    @Autowired
+    public CarreraService carreraService;
+    
+    
 
     @FXML
     public TableView tablaCarrera = new TableView();
 
     public void guardarCarrera(ActionEvent actionEvent) throws IOException {
-        Stage s = Main.getPrimaryStage();
+        Carrera carrera = new Carrera();
 
-        Node [] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/carreras/list.fxml"));
+        carrera.setNombre(tfNombre.getText());
+        carreraService.save(carrera);
 
-        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
-        pnl_scroll.getChildren().clear();
-        pnl_scroll.getChildren().add(nodes[v]);
-        pnl_scroll.setVisible(true);
-
-//        tablaCarrera.getColumns().addAll(colNombre, colInici, colFin);
-//        tablaCarrera.setItems(findAll());
+        
+                    
 
     }
 
-    private ObservableList<Carrera> findAll(){
-        return FXCollections.observableArrayList(carreraService.findAll());
-    }
+
 
 }
