@@ -37,16 +37,15 @@
 
 
             <!--Campo Nombre-->
-            <Label layoutX="41.0" layoutY="152.0" text="Nombre:" />
-            <TextField fx:id="tfNombre" layoutX="95.0" layoutY="148.0" prefHeight="25.0" prefWidth="340.0" />
-
-            <!--Campo Horario-->
-            <Label layoutX="473.0" layoutY="152.0" text="Turno:" />
-            <TextField fx:id="tfTurno" layoutX="524.0" layoutY="148.0" prefHeight="25.0" prefWidth="209.0" />
+            <Label layoutX="111.0" layoutY="152.0" text="Nombre de Carrera:">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField fx:id="tfNombre" layoutX="241.0" layoutY="150.0" prefHeight="25.0" prefWidth="284.0" />
 
             <!--Botones "Atras" y "Cargar Carrera"-->
-            <Button fx:id="buttonAtras" layoutX="257.0" layoutY="242.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
-            <Button layoutX="390.0" layoutY="242.0" mnemonicParsing="false" onAction="#guardarCarrera" prefHeight="25.0" prefWidth="116.0" text="Cargar Carrera" />
+            <Button fx:id="buttonAtras" layoutX="365.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
+            <Button layoutX="517.0" layoutY="240.0" mnemonicParsing="false" onAction="#guardarCarrera" prefHeight="25.0" prefWidth="116.0" text="Cargar Carrera" />
 
             <!--Logo del panel"-->
             <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
@@ -54,6 +53,13 @@
                   <Image url="@../../images/logoInstituto.png" />
                </image>
             </ImageView>
+            <Label fx:id="lblCamposVacios" layoutX="432.0" layoutY="269.0" prefHeight="17.0" prefWidth="85.0" text="Campos vacios" textFill="RED" visible="false" />
+            <Label layoutX="546.0" layoutY="154.0" text="Turno:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="boxTurno" layoutX="603.0" layoutY="150.0" prefHeight="25.0" prefWidth="171.0" />
 
          </children>
 

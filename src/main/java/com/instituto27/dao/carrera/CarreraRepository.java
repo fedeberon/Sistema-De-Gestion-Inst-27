@@ -18,7 +18,6 @@ public class CarreraRepository {
     public Carrera save(Carrera carrera) {
         Session session = sessionFactory.openSession();
         session.save(carrera);
-
         return carrera;
     }
 }

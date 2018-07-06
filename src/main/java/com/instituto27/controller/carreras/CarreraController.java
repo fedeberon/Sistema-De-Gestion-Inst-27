@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -24,29 +25,31 @@ import java.io.IOException;
  */
 @Component
 public class CarreraController {
+    @FXML
     public TextField tfTurno;
+    @FXML
     public TextField tfNombre;
-
-
     @Autowired
     public CarreraService carreraService;
-    
-    
-
     @FXML
-    public TableView tablaCarrera = new TableView();
+    public ComboBox boxTurno;
+
+    public void initialize() {
+        boxTurno.getItems().removeAll(boxTurno.getItems());
+        boxTurno.getItems().addAll("Mañana", "Tarde", "Noche");
+        boxTurno.getSelectionModel().select("");
+    }
+
 
     public void guardarCarrera(ActionEvent actionEvent) throws IOException {
         Carrera carrera = new Carrera();
-
         carrera.setNombre(tfNombre.getText());
+        carrera.setTurno(boxTurno.getSelectionModel().getSelectedItem().toString());
         carreraService.save(carrera);
+        }
 
-        
-                    
 
     }
 
 
 
-}
