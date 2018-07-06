@@ -5,6 +5,7 @@
  */
 package com.instituto27.controller;
 
+import com.instituto27.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +25,7 @@ import java.util.ResourceBundle;
  *
  * @author oXCToo
  */
+@Component
 public class HomeController implements Initializable {
     @FXML
     private Label label;
@@ -60,9 +63,11 @@ public class HomeController implements Initializable {
     }
 
     public void btnAlumnos(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/Alumnos.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
-        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/alumno/Alumnos.fxml"));
+        nodes[1] = fxmlLoader.load();
         pnl_scroll.getChildren().add(nodes[1]);
     }
 
@@ -94,7 +99,7 @@ public class HomeController implements Initializable {
 
     public void btnReporte(ActionEvent actionEvent) throws IOException {
         pnl_scroll.getChildren().clear();
-        Node [] nodes = new  Node[15];
+        Node [] nodes = new  Node[2];
         Integer v = 1;
         nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/reporte/Reportes.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);

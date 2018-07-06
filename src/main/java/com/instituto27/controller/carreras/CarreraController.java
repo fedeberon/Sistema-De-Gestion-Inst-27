@@ -1,7 +1,7 @@
 package com.instituto27.controller.carreras;
 
-import com.instituto27.controller.DrapoDashboard;
 import com.instituto27.domain.carrera.Carrera;
+import com.instituto27.main.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,7 +9,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import com.instituto27.service.carreras.CarreraService;
 
@@ -25,9 +27,8 @@ public class CarreraController {
     @FXML
     public TableView tablaCarrera = new TableView();
 
-
     public void guardarCarrera(ActionEvent actionEvent) throws IOException {
-        Stage s = DrapoDashboard.getPrimaryStage();
+        Stage s = Main.getPrimaryStage();
 
         Node [] nodes = new  Node[2];
         Integer v = 1;

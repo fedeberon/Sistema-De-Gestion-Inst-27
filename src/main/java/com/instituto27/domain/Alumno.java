@@ -1,9 +1,6 @@
 package com.instituto27.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -11,10 +8,11 @@ import java.time.LocalDate;
  */
 
 @Entity
-@Table(name = "ALUMNOS")
+@Table(name = "alumnos")
 public class Alumno {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="ALU_ID")
     private Integer id;
 
