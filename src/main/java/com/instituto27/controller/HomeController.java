@@ -63,7 +63,7 @@ public class HomeController implements Initializable {
     }
 
     public void btnAlumnos(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/Alumnos.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/home.fxml"));
         fxmlLoader.setControllerFactory(Main.springContext::getBean);
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];

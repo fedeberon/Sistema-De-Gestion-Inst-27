@@ -1,7 +1,13 @@
 package com.instituto27.domain;
 
+import javafx.collections.FXCollections;
+import javafx.fxml.Initializable;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 import javax.persistence.*;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 /**
  * Created by ISFDyT Nº 27 on 26/06/2018.
@@ -10,6 +16,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "alumnos")
 public class Alumno {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
