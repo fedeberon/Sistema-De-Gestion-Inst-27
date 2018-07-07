@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.alumnos.MenuAlumnoController">
+
+   <children>
+
+      <Pane layoutX="29.0" layoutY="22.0" prefHeight="338.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+
+         <children>
+
+            <!--Logo del panel"-->
+            <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/logoInstituto.png" />
+               </image>
+            </ImageView>
+
+            <Label layoutX="111.0" layoutY="33.0" text="Home de Alumnos" textFill="#3a1c9d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+
+            <Separator layoutX="41.0" layoutY="75.0" prefWidth="820.0" />
+            <Button layoutX="111.0" layoutY="100.0" mnemonicParsing="false" text="Cargar Alumno" />
+            <Button onAction="#buscarAlumnos" layoutX="249.0" layoutY="100.0" mnemonicParsing="false" text="Ver Alumnos" />
+            <Button layoutX="364.0" layoutY="100.0" mnemonicParsing="false" text="Buscar alumno por DNI" />
+            <Button layoutX="550.0" layoutY="100.0" mnemonicParsing="false" text="Buscar alumno por Legajo" />
+
+         </children>
+
+         <effect>
+            <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+
+      </Pane>
+
+   </children>
+</AnchorPane>

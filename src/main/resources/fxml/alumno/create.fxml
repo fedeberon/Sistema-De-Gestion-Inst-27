@@ -51,7 +51,7 @@
             <TextField fx:id="aluEmail" layoutX="494.0" layoutY="146.0" prefHeight="25.0" prefWidth="123.0" />
             <Label layoutX="445.0" layoutY="146.0" prefHeight="25.0" prefWidth="49.0" text="E-Mail" />
 
-            <Button layoutX="322.0" layoutY="216.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
+            <Button onAction="#createAtras" layoutX="322.0" layoutY="216.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
             <Button onAction="#save" layoutX="458.0" layoutY="216.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cargar Alumno" textAlignment="RIGHT" />
 
          </children>
