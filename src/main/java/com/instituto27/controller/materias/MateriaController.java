@@ -1,6 +1,5 @@
 package com.instituto27.controller.materias;
 
-import com.instituto27.controller.DrapoDashboard;
 import com.instituto27.domain.Materia;
 import com.instituto27.main.Main;
 import javafx.event.ActionEvent;
@@ -35,7 +34,7 @@ public class MateriaController {
         Node[] nodes = new  Node[2];
         Integer v = 1;
         nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
-        Stage s = DrapoDashboard.getPrimaryStage();
+        Stage s = Main.getPrimaryStage();
         VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
         pnl_scroll.getChildren().add(nodes[v]);
