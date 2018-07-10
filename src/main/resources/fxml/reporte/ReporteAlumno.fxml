@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.DropShadow?>
@@ -15,12 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.reporte.ReporteController">
 
     <children>
 
-        <Pane layoutX="29.0" layoutY="22.0" prefHeight="338.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+        <Pane layoutX="14.0" layoutY="23.0" prefHeight="500.0" prefWidth="896.0" style="-fx-background-color: #fff;">
 
             <children>
 
@@ -31,15 +26,23 @@
                     </image>
                 </ImageView>
 
-                        <!--Label titulo principal-->
+                <!--Label titulo principal-->
                 <Label layoutX="111.0" layoutY="33.0" text="Reportes" textFill="#3a1c9d">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
 
-                        <!--Separador del titulo con el resto del panel-->
+                <!--Separador del titulo con el resto del panel-->
                 <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+
+                <AmbientLight color="CHARTREUSE" layoutX="253.0" layoutY="194.0" lightOn="true" />
+            <CheckBox layoutX="34.0" layoutY="136.0" mnemonicParsing="false" text="CheckBox" />
+            <CheckBox layoutX="34.0" layoutY="161.0" mnemonicParsing="false" text="CheckBox" />
+            <Label layoutX="34.0" layoutY="107.0" text="Label" />
+            <Label layoutX="34.0" layoutY="194.0" text="EXAMEN" />
+            <CheckBox layoutX="34.0" layoutY="211.0" mnemonicParsing="false" text="CheckBox" />
+            <CheckBox layoutX="34.0" layoutY="237.0" mnemonicParsing="false" text="CheckBox" />
 
 
 
@@ -59,6 +62,7 @@
             </effect>
 
         </Pane>
+        <AmbientLight color="CHARTREUSE" lightOn="true" />
 
     </children>
 </AnchorPane>
