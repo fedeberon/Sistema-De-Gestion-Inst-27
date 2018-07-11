@@ -1,20 +1,25 @@
 package com.instituto27.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javafx.collections.FXCollections;
+import javafx.fxml.Initializable;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import javax.persistence.*;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 /**
  * Created by ISFDyT Nº 27 on 26/06/2018.
  */
 
 @Entity
-@Table(name = "ALUMNOS")
+@Table(name = "alumnos")
 public class Alumno {
 
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="ALU_ID")
     private Integer id;
 

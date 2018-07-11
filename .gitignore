@@ -8,12 +8,9 @@
 
 .proyect
 
-<<<<<<< HEAD
 # BlueJ
 
-=======
 # BlueJ files
->>>>>>> origin/GLAM-3
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
@@ -232,7 +229,7 @@ TSWLatexianTemp*
 # auto folder when using emacs and auctex
 /auto/*
 
-*/target/**
+/target/**
 
 
 /bin/
