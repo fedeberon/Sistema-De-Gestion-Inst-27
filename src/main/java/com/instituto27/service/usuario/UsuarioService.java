@@ -5,6 +5,8 @@ import com.instituto27.domain.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UsuarioService {
@@ -20,5 +22,9 @@ public class UsuarioService {
         return dao.get(username);
     }
 
+
+    public List<Usuario> getByDNI(String dni){
+        return dao.getByDNI(dni);
+    }
 
 }
