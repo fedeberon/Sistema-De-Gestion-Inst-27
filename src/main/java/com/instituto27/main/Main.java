@@ -21,7 +21,7 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 public class Main extends Application {
 
-    private ConfigurableApplicationContext springContext;
+    public static ConfigurableApplicationContext springContext;
     Parent root;
 
     public static Stage primaryStage;
@@ -58,6 +58,7 @@ public class Main extends Application {
         springContext = SpringApplication.run(Main.class);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login/login.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
+
         root = fxmlLoader.load();
     }
 }

@@ -1,11 +1,13 @@
 package com.instituto27.controller.reporte;
 
 import com.instituto27.main.Main;
+import com.instituto27.service.alumno.AlumnoService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
@@ -13,7 +15,8 @@ import java.io.IOException;
 @Controller
 public class ReporteController {
 
-
+    @Autowired
+    private AlumnoService alumnoService;
 
     public void btnProfesores(ActionEvent actionEvent) throws IOException {
         Stage s = Main.getPrimaryStage();

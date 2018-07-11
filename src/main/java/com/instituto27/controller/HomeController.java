@@ -5,6 +5,7 @@
  */
 package com.instituto27.controller;
 
+import com.instituto27.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -62,9 +63,11 @@ public class HomeController implements Initializable {
     }
 
     public void btnAlumnos(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/home.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
-        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/alumno/Alumnos.fxml"));
+        nodes[1] = fxmlLoader.load();
         pnl_scroll.getChildren().add(nodes[1]);
     }
 
@@ -77,13 +80,21 @@ public class HomeController implements Initializable {
     }
 
     public void btnCarreras(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/carreras/create.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = (Node) FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
-        pnl_scroll.getChildren().add(nodes[v]);
-        pnl_scroll.setVisible(true);
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
+
+    public void btnMaterias(ActionEvent actionEvent) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node [] nodes = new  Node[2];
+        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/materias/Materias.fxml"));
+        pnl_scroll.getChildren().add(nodes[1]);
+    }
+
 
 
     public void btnReporte(ActionEvent actionEvent) throws IOException {
