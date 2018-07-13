@@ -57,4 +57,11 @@ public class UsuarioRepository{
         return list;
     }
 
+    public List<Usuario> getByDNI(String dni) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Usuario where dni =: dni");
+        query.setParameter("dni", dni);
+
+        return query.list();
+    }
 }

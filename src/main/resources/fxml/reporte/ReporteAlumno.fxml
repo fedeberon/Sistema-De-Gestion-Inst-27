@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.AmbientLight?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -43,6 +44,7 @@
             <Label layoutX="34.0" layoutY="194.0" text="EXAMEN" />
             <CheckBox layoutX="34.0" layoutY="211.0" mnemonicParsing="false" text="CheckBox" />
             <CheckBox layoutX="34.0" layoutY="237.0" mnemonicParsing="false" text="CheckBox" />
+            <Button onAction="#btnAtras" layoutX="825.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Atras" />
 
 
 
