@@ -22,5 +22,9 @@ public class CarreraService {
     public Carrera save(Carrera carrera) {
         return dao.save(carrera);
     }
+
+    public List<Carrera> findAll(){
+        return dao.findAll();
+    }
 }
 

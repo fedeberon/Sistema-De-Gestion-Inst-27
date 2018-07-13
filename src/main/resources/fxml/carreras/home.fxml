@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.DropShadow?>
@@ -31,23 +32,7 @@
             </Label>
 
             <!--Separador del titulo con el resto del panel-->
-            <Separator layoutX="41.0" layoutY="75.0" prefHeight="0.0" prefWidth="817.0" />
-
-
-            <!--Campo Nombre-->
-            <Label layoutX="34.0" layoutY="102.0" text="Nombre:" />
-            <TextField layoutX="95.0" layoutY="98.0" prefHeight="25.0" prefWidth="340.0" />
-
-            <!--Campo Horario-->
-            <Label layoutX="473.0" layoutY="102.0" text="Horario:" />
-            <Label layoutX="525.0" layoutY="102.0" opacity="0.5" text="De" />
-            <TextField layoutX="549.0" layoutY="98.0" prefHeight="25.0" prefWidth="46.0" />
-            <Label layoutX="604.0" layoutY="102.0" opacity="0.5" text="a" />
-            <TextField layoutX="621.0" layoutY="98.0" prefHeight="25.0" prefWidth="46.0" />
-
-            <!--Botones "Atras" y "Cargar Carrera"-->
-            <Button layoutX="322.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
-            <Button layoutX="458.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cargar Carrera" />
+            <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
 
             <!--Logo del panel"-->
             <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
@@ -55,6 +40,11 @@
                   <Image url="@../../images/logoInstituto.png" />
                </image>
             </ImageView>
+            <!--Boton para acceder al menu para crear una carrera nueva"-->
+            <Button fx:id="btnCrearCarrera" layoutX="318.0" layoutY="144.0" mnemonicParsing="false" onAction="#crearCarrera" prefHeight="25.0" prefWidth="130.0" text="Crear Carrera" />
+            <!--Boton para volver al menu principal del modulo carrera"-->
+            <Button fx:id="btnAtras" layoutX="181.0" layoutY="144.0" mnemonicParsing="false" onAction="#atras" prefHeight="25.0" prefWidth="130.0" text="Atras" />
+            <Button fx:id="btnListaCarreras" layoutX="454.0" layoutY="144.0" mnemonicParsing="false" onAction="#listaCarreras" prefHeight="25.0" prefWidth="130.0" text="Lista de Carreras" />
 
          </children>
 

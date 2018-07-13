@@ -80,7 +80,7 @@ public class HomeController implements Initializable {
     }
 
     public void btnCarreras(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/carreras/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/carreras/home.fxml"));
         fxmlLoader.setControllerFactory(Main.springContext::getBean);
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
