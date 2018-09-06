@@ -92,4 +92,9 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
+    public void btnMaterias(ActionEvent actionEvent) {
+    }
+
+    public void btnNotas(ActionEvent actionEvent) {
+    }
 }
