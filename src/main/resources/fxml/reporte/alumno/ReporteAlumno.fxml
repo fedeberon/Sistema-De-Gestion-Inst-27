@@ -53,10 +53,10 @@
 
                 <TableView fx:id="tablaAlumnos" layoutX="148.0" layoutY="102.0" prefHeight="338.0" prefWidth="671.0">
                     <columns>
-                        <TableColumn fx:id="itemNameCol" prefWidth="96.0" text="ID" />
-                        <TableColumn fx:id="itemApeCol" prefWidth="143.0" text="Nombre" />
-                        <TableColumn fx:id="itemDNICol" prefWidth="149.0" text="Apellido" />
-                        <TableColumn fx:id="itemIdCol" prefWidth="126.0" text="DNI" />
+                        <TableColumn fx:id="itemIdCol" prefWidth="96.0" text="ID" />
+                        <TableColumn fx:id="itemNameCol" prefWidth="143.0" text="Nombre" />
+                        <TableColumn fx:id="itemApeCol" prefWidth="149.0" text="Apellido" />
+                        <TableColumn fx:id="itemDNICol" prefWidth="126.0" text="DNI" />
                         <TableColumn prefWidth="156.0" text="Estado" />
                     </columns>
                 </TableView>
