@@ -22,6 +22,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -38,8 +39,12 @@ public class AlumnoController  implements Initializable {
     public void  initialize(URL url, ResourceBundle rb) {
         itemIdCol.setCellValueFactory(new PropertyValueFactory<Alumno,Integer>("id"));
         itemNameCol.setCellValueFactory(new PropertyValueFactory<Alumno,String>("nombre"));
-        itemApeCol.setCellValueFactory(new PropertyValueFactory<Alumno,Integer>("apellido"));
+        itemApeCol.setCellValueFactory(new PropertyValueFactory<Alumno,String>("apellido"));
         itemDNICol.setCellValueFactory(new PropertyValueFactory<Alumno,String>("DNI"));
+        itemFechaDeNacimientoCol.setCellValueFactory(new PropertyValueFactory<Alumno,LocalDate>("fechaNacimiento"));
+        itemCelularCol.setCellValueFactory(new PropertyValueFactory<Alumno,LocalDate>("celular"));
+        itemDireccionCol.setCellValueFactory(new PropertyValueFactory<Alumno,LocalDate>("direccion"));
+        itemEmailCol.setCellValueFactory(new PropertyValueFactory<Alumno,LocalDate>("email"));
         tablaAlumnos.setItems(getEnseignant());
     }
 
@@ -63,5 +68,13 @@ public class AlumnoController  implements Initializable {
     public TableColumn itemApeCol;
     @FXML
     public TableColumn itemDNICol;
+    @FXML
+    public TableColumn itemFechaDeNacimientoCol;
+    @FXML
+    public TableColumn itemCelularCol;
+    @FXML
+    public TableColumn itemDireccionCol;
+    @FXML
+    public TableColumn itemEmailCol;
 }
 

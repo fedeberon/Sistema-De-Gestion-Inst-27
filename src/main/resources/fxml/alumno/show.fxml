@@ -31,10 +31,15 @@
             <Button layoutX="372.0" layoutY="292.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
             <TableView  fx:id="tablaAlumnos" layoutX="41.0" layoutY="102.0" prefHeight="179.0" prefWidth="778.0">
               <columns>
-                <TableColumn fx:id="itemNameCol" prefWidth="96.0" text="Nombre" />
-                <TableColumn fx:id="itemApeCol" prefWidth="89.0" text="Apellido" />
-                  <TableColumn fx:id="itemDNICol" prefWidth="95.0" text="DNI" />
-                  <TableColumn fx:id="itemIdCol" prefWidth="126.0" text="Id" />
+                  <TableColumn fx:id="itemIdCol" prefWidth="30.0" text="Id" />
+                  <TableColumn fx:id="itemNameCol" prefWidth="96.0" text="Nombre" />
+                  <TableColumn fx:id="itemApeCol" prefWidth="89.0" text="Apellido" />
+                  <TableColumn fx:id="itemDNICol" prefWidth="75.0" text="DNI" />
+                  <TableColumn fx:id="itemFechaDeNacimientoCol" prefWidth="100.0" text="Fecha de Nac." />
+                  <TableColumn fx:id="itemCelularCol" prefWidth="95.0" text="Celular" />
+                  <TableColumn fx:id="itemDireccionCol" prefWidth="95.0" text="Direccion" />
+                  <TableColumn fx:id="itemEmailCol" prefWidth="125.0" text="Email" />
+
 
               </columns>
             </TableView>
