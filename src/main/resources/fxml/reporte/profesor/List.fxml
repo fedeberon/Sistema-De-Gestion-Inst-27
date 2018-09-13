@@ -30,7 +30,7 @@
                 </ImageView>
 
                 <!--Label titulo principal-->
-                <Label layoutX="111.0" layoutY="33.0" text="Reportes Profesor" textFill="#3a1c9d">
+                <Label layoutX="111.0" layoutY="33.0" text="Reporte Profesor" textFill="#3a1c9d">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -40,7 +40,7 @@
                 <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
 
                 <AmbientLight color="CHARTREUSE" layoutX="253.0" layoutY="194.0" lightOn="true" />
-                <TableView fx:id="tablaAlumnos" layoutX="148.0" layoutY="102.0" prefHeight="338.0" prefWidth="671.0">
+                <TableView fx:id="tablaAlumnos" layoutX="42.0" layoutY="102.0" prefHeight="338.0" prefWidth="777.0">
                     <columns>
                         <TableColumn fx:id="itemNameCol" prefWidth="96.0" text="ID" />
                         <TableColumn fx:id="itemApeCol" prefWidth="143.0" text="Nombre" />
