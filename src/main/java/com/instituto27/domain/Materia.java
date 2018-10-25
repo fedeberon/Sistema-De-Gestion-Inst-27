@@ -1,5 +1,7 @@
 package com.instituto27.domain;
 
+import com.instituto27.domain.carrera.Carrera;
+
 import javax.lang.model.element.Name;
 import javax.persistence.*;
 
@@ -17,6 +19,10 @@ public class Materia {
 
     @Column(name = "MAT_PROFESOR")
     private String profesor;
+
+    @ManyToOne
+    @JoinColumn(name = "MAT_CAR_ID")
+    private Carrera carrera;
 
     public Long getId() {
         return id;
@@ -42,4 +48,11 @@ public class Materia {
         this.profesor = profesor;
     }
 
+    public Carrera getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
+    }
 }

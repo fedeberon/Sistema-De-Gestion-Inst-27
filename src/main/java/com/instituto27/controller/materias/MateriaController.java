@@ -1,21 +1,31 @@
 package com.instituto27.controller.materias;
 
+import com.instituto27.domain.Alumno;
 import com.instituto27.domain.Materia;
+import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
+import com.instituto27.service.carreras.CarreraService;
+import com.instituto27.service.materia.MateriaService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -37,7 +47,13 @@ public class MateriaController implements Initializable{
     public Button btnGuardar;
 
     @FXML
-    public SplitMenuButton splitMenuButton;
+    public ComboBox<String> cmbCarreras;
+
+    @Autowired
+    MateriaService materiaService;
+
+    @Autowired
+    public CarreraService carreraService;
 
     public void crearCarrera(ActionEvent actionEvent) throws IOException {
         Node[] nodes = new  Node[2];
@@ -51,16 +67,24 @@ public class MateriaController implements Initializable{
 
     public void btnGuardar(ActionEvent actionEvent) throws IOException {
         Materia materia = new Materia();
-
         materia.setNombre(txtNombre.getText());
         materia.setProfesor(profesor.getText());
 
+        materiaService.save(materia);
+    }
 
+    public ObservableList<String> getEnseignant() {
+        ObservableList<String> enseignantList = FXCollections.observableArrayList();
+        List<Carrera> eList = carreraService.findAll();
+        for (Carrera ent : eList) {
+            enseignantList.add(ent.getNombre());
+        }
+        return enseignantList;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        cmbCarreras.setItems(getEnseignant());
     }
 }
 

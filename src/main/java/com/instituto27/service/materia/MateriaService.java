@@ -5,6 +5,8 @@ import com.instituto27.domain.Materia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by 29032017 on 05/07/2018.
  */
@@ -16,5 +18,9 @@ public class MateriaService {
 
     public Materia save(Materia materia) {
         return dao.save(materia);
+    }
+
+    public List<Materia> findAll() {
+        return dao.findAll();
     }
 }
