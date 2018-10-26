@@ -42,8 +42,6 @@
             </ImageView>
             <!--Boton para acceder al menu para crear una carrera nueva"-->
             <Button fx:id="btnCrearCarrera" layoutX="318.0" layoutY="144.0" mnemonicParsing="false" onAction="#crearCarrera" prefHeight="25.0" prefWidth="130.0" text="Crear Carrera" />
-            <!--Boton para volver al menu principal del modulo carrera"-->
-            <Button fx:id="btnAtras" layoutX="181.0" layoutY="144.0" mnemonicParsing="false" onAction="#atras" prefHeight="25.0" prefWidth="130.0" text="Atras" />
             <Button fx:id="btnListaCarreras" layoutX="454.0" layoutY="144.0" mnemonicParsing="false" onAction="#listaCarreras" prefHeight="25.0" prefWidth="130.0" text="Lista de Carreras" />
 
          </children>
