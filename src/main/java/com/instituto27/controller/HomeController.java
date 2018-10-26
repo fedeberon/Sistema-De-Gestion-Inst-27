@@ -70,7 +70,7 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
         Integer v = 1;
-        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/profesor/Profesor.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
