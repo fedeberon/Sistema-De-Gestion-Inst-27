@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.carreras.CarreraController">
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.carreras.CarreraController">
 
    <children>
 
@@ -40,13 +36,19 @@
                   <Image url="@../../images/logoInstituto.png" />
                </image>
             </ImageView>
-
+            <!--Tabla-->
             <TableView fx:id="listCarreras" layoutX="41.0" layoutY="102.0" prefHeight="179.0" prefWidth="778.0">
                <columns>
+                  <!--Primera Columna-->
                   <TableColumn fx:id="colNom" prefWidth="313.0" text="Nombre" />
+                  <!--Segunda Columna"-->
                   <TableColumn fx:id="colTur" minWidth="0.0" prefWidth="142.0" text="Turno" />
                </columns>
             </TableView>
+            <!--Boton que al presionarlo despliega "/fxml/carreras/create.fxml"-->
+            <Button layoutX="453.0" layoutY="294.0" mnemonicParsing="false" onAction="#guardarCarrera" prefHeight="25.0" prefWidth="130.0" text="Crear Nueva Carrera" />
+            <!--Boton que al presionarlo despliega "/fxml/carreras/home.fxml"-->
+            <Button layoutX="313.0" layoutY="294.0" mnemonicParsing="false" onAction="#atrasHome" prefHeight="25.0" prefWidth="130.0" text="Atras" />
 
          </children>
 
