@@ -29,7 +29,7 @@
             </Label>
 
             <Separator layoutX="41.0" layoutY="75.0" prefWidth="820.0" />
-            <Button layoutX="111.0" layoutY="100.0" mnemonicParsing="false" text="Cargar Alumno" />
+            <Button onAction="#cargarAlumnos" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" text="Cargar Alumno" />
             <Button onAction="#buscarAlumnos" layoutX="249.0" layoutY="100.0" mnemonicParsing="false" text="Ver Alumnos" />
             <Button layoutX="364.0" layoutY="100.0" mnemonicParsing="false" text="Buscar alumno por DNI" />
             <Button layoutX="550.0" layoutY="100.0" mnemonicParsing="false" text="Buscar alumno por Legajo" />

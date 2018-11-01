@@ -24,6 +24,8 @@ public class CarreraService {
     }
 
     public List<Carrera> findAll() {
+
+
         return dao.findAll();
     }
 }

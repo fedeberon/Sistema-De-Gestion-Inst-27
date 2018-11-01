@@ -1,55 +1,45 @@
 package com.instituto27.controller.carreras;
 
 import com.instituto27.domain.carrera.Carrera;
-import com.instituto27.main.Main;
+import com.instituto27.service.carreras.CarreraService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import com.instituto27.service.carreras.CarreraService;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
- * Created by ISFDyT Nº 27 on 30/05/2018.
+ * Created by ISFDyT Nº 27 on 13/07/2018.
  */
 @Component
 public class CarreraController {
-    @FXML
-    public TextField tfTurno;
-    @FXML
-    public TextField tfNombre;
     @Autowired
     public CarreraService carreraService;
-    @FXML
-    public ComboBox boxTurno;
 
-    public void initialize() {
-        boxTurno.getItems().removeAll(boxTurno.getItems());
-        boxTurno.getItems().addAll("Mañana", "Tarde", "Noche");
-        boxTurno.getSelectionModel().select("");
+    public void initialize(){
+        colNom.setCellValueFactory(new PropertyValueFactory<Carrera, String>("nombre"));
+        colTur.setCellValueFactory(new PropertyValueFactory<Carrera, String>("turno"));
+        listCarreras.setItems(getEnseignant());
     }
 
-
-    public void guardarCarrera(ActionEvent actionEvent) throws IOException {
-        Carrera carrera = new Carrera();
-        carrera.setNombre(tfNombre.getText());
-        carrera.setTurno(boxTurno.getSelectionModel().getSelectedItem().toString());
-        carreraService.save(carrera);
+    public ObservableList<Carrera> getEnseignant() {
+        ObservableList<Carrera> enseignantList = FXCollections.observableArrayList();
+        List<Carrera> eList = carreraService.findAll();
+        for (Carrera ent : eList) {
+            enseignantList.add(ent);
         }
-
-
+        return enseignantList;
     }
 
-
-
+    @FXML
+    public TableView<Carrera> listCarreras;
+    @FXML
+    public TableColumn colNom;
+    @FXML
+    public TableColumn colTur;
+}
