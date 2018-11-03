@@ -92,4 +92,17 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
+    public void btnMaterias(ActionEvent actionEvent) {
+    }
+
+    public void btnNotas(ActionEvent actionEvent) {
+    }
+
+    public void btnInscripcion(ActionEvent actionEvent) throws IOException {
+        pnl_scroll.getChildren().clear();
+        Node [] nodes = new  Node[15];
+        Integer v = 1;
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/inscripciones/inscripciones.fxml"));
+        pnl_scroll.getChildren().add(nodes[v]);
+    }
 }
