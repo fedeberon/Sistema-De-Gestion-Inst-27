@@ -1,11 +1,11 @@
 CREATE TABLE profesores(
-	profesor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    profesor_nombre VARCHAR(45) NOT NULL,
-    profesor_apellido VARCHAR(45) NOT NULL,
-	profesor_direccion VARCHAR(45),
-    profesor_numero INT(4),
-    profesor_celular INT(45),
-    profesor_fijo INT(45),
-	profesor_cuil INT(11),
-    profesor_fecha_nacimiento DATE
+	PRO_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  PRO_NOMBRE VARCHAR(45) NOT NULL,
+  PRO_APELLIDO VARCHAR(45) NOT NULL,
+	PRO_DIRECCION VARCHAR(45),
+  PRO_NUMERO INT(4),
+  PRO_CELULAR INT(45),
+  PRO_FIJO INT(45),
+	PRO_CUIL INT(11),
+  PRO_NACIMIENTO DATE
 );
