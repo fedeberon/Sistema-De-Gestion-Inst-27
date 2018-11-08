@@ -24,4 +24,9 @@ public class AlumnoService {
     public List<Alumno> findAll(){
         return dao.findAll();
     }
+
+    public Alumno getByDni(String dni){
+        return dao.getByDni(dni);
+    }
+
 }

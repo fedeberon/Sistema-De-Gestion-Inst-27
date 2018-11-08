@@ -18,7 +18,4 @@ public class ProfesorRepository {
 
         return profesor;
     }
-
-
-
 }
