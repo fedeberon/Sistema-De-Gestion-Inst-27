@@ -123,7 +123,7 @@ public class NotaController implements Initializable {
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
-    /* IR A LA INTERFAZ CON LA LISTA DE NOTAS */
+    /* IR A LA INTERFAZ DE LISTA DE NOTAS */
     public void listaNotas(ActionEvent actionEvent) throws IOException {
         Node[] nodes = new  Node[2];
         Integer v = 1;
