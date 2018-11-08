@@ -10,10 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -49,6 +47,7 @@ public class AlumnoController  implements Initializable {
     }
 
 
+
     public ObservableList<Alumno> getEnseignant() {
         ObservableList<Alumno> enseignantList = FXCollections.observableArrayList();
         List<Alumno> eList = alumnoService.findAll();
@@ -56,6 +55,19 @@ public class AlumnoController  implements Initializable {
             enseignantList.add(ent);
         }
         return enseignantList;
+    }
+
+
+
+    public void showAtras(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/home.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
     @FXML
@@ -76,5 +88,6 @@ public class AlumnoController  implements Initializable {
     public TableColumn itemDireccionCol;
     @FXML
     public TableColumn itemEmailCol;
+
 }
 

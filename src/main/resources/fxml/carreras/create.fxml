@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.carreras.CarreraMenuController">
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.carreras.CarreraFormController">
 
    <children>
 
@@ -34,7 +34,7 @@
             <TextField fx:id="tfNombre" layoutX="241.0" layoutY="150.0" prefHeight="25.0" prefWidth="284.0" />
 
             <!--Botones "Atras" y "Cargar Carrera"-->
-            <Button fx:id="buttonAtras" layoutX="365.0" layoutY="240.0" mnemonicParsing="false" onAction="#atrasCreate" prefHeight="25.0" prefWidth="116.0" text="Atras" />
+            <Button fx:id="buttonAtras" layoutX="365.0" layoutY="240.0" mnemonicParsing="false" onAction="#atrasHome" prefHeight="25.0" prefWidth="116.0" text="Atras" />
             <Button layoutX="517.0" layoutY="240.0" mnemonicParsing="false" onAction="#guardarCarrera" prefHeight="25.0" prefWidth="116.0" text="Cargar Carrera" />
 
             <!--Logo del panel"-->

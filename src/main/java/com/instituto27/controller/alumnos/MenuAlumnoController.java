@@ -3,6 +3,7 @@ package com.instituto27.controller.alumnos;
 import com.instituto27.domain.Alumno;
 import com.instituto27.main.Main;
 import com.instituto27.service.alumno.AlumnoService;
+import com.instituto27.service.profesor.validar.ValidacionDeString;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,6 +47,9 @@ public class MenuAlumnoController {
     @Autowired
     private AlumnoService alumnoService;
 
+    @Autowired
+    private ValidacionDeString validacionDeString;
+
 
     public void buscarAlumnos(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/show.fxml"));
@@ -82,7 +86,6 @@ public class MenuAlumnoController {
 
     public void save(ActionEvent actionEvent) throws IOException {
         Alumno alumno = new Alumno();
-
         alumno.setNombre(aluNombre.getText());
         alumno.setApellido(aluApellido.getText());
         alumno.setDNI(aluDni.getText());
@@ -92,5 +95,19 @@ public class MenuAlumnoController {
         alumno.setFechaNacimiento(aluFecNac.getValue());
 
         alumnoService.save(alumno);
+        vaciarCampos();
     }
+
+    public void vaciarCampos(){
+        Alumno alumno = new Alumno();
+
+        aluNombre.clear();
+        aluApellido.clear();
+        aluDni.clear();
+        aluCelular.clear();
+        aluDireccion.clear();
+        aluEmail.clear();
+        aluFecNac.getEditor().clear();
+    }
+
 }

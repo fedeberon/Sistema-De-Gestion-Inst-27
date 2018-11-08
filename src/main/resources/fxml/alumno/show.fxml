@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -7,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+
 <AnchorPane prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.alumnos.AlumnoController">
 
    <children>
@@ -28,8 +34,7 @@
                </font>
             </Label>
 
-            <Button layoutX="372.0" layoutY="292.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
-            <TableView  fx:id="tablaAlumnos" layoutX="41.0" layoutY="102.0" prefHeight="179.0" prefWidth="778.0">
+            <TableView fx:id="tablaAlumnos" layoutX="41.0" layoutY="102.0" prefHeight="179.0" prefWidth="778.0">
               <columns>
                   <TableColumn fx:id="itemIdCol" prefWidth="30.0" text="Id" />
                   <TableColumn fx:id="itemNameCol" prefWidth="96.0" text="Nombre" />
@@ -39,11 +44,9 @@
                   <TableColumn fx:id="itemCelularCol" prefWidth="95.0" text="Celular" />
                   <TableColumn fx:id="itemDireccionCol" prefWidth="95.0" text="Direccion" />
                   <TableColumn fx:id="itemEmailCol" prefWidth="125.0" text="Email" />
-
-
               </columns>
             </TableView>
-
+             <Button layoutX="372.0" layoutY="292.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#showAtras" prefHeight="25.0" prefWidth="116.0" text="Atras" />
          </children>
 
          <effect>
