@@ -88,6 +88,17 @@ public class NotaController implements Initializable {
         }
     }
 
+    /* IR AL MÓDULO DE MATERIAS */
+    public void crearMateria(ActionEvent actionEvent) throws IOException {
+        Node[] nodes = new  Node[2];
+        Integer v = 1;
+        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/materias/Materias.fxml"));
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        pnl_scroll.getChildren().add(nodes[v]);
+    }
+
     /* TRAER LA LISTA DE ALUMNOS AL COMBOBOX */
     public void cargarComboDeAlumnos() {
         ObservableList<Alumno> enseignantList = FXCollections.observableArrayList();
