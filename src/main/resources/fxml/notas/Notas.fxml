@@ -34,17 +34,19 @@
                </image>
             </ImageView>
 
-            <ComboBox fx:id="cmbCarrera"  layoutX="60.0" layoutY="100.0" prefWidth="150.0" promptText="Carrera" />
-            <Button fx:id="btnCrearCarrera" layoutX="225.0" layoutY="100.0" mnemonicParsing="false" prefWidth="150.0" text="Cargar carrera" />
+            <ComboBox fx:id="cmbCarrera" layoutX="60.0" layoutY="100.0" prefWidth="150.0" promptText="Carrera" />
+            <Button fx:id="btnCrearCarrera" layoutX="225.0" layoutY="100.0" mnemonicParsing="false" onAction="#crearCarrera" prefWidth="150.0" text="Cargar carrera" />
 
             <ComboBox fx:id="cmbMateria" layoutX="60.0" layoutY="170.0" prefWidth="150.0" promptText="Materia" />
             <Button fx:id="btnCrearMateria" layoutX="225.0" layoutY="170.0" mnemonicParsing="false" prefWidth="150.0" text="Cargar materia" />
 
-            <ComboBox id="cmbAlumno" layoutX="60.0" layoutY="240.0" prefWidth="150.0" promptText="Alumno" />
-            <Button id="btnCrearAlumno" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" prefWidth="150.0" text="Cargar alumno" />
+            <ComboBox fx:id="cmbAlumno" layoutX="60.0" layoutY="240.0" prefWidth="150.0" promptText="Alumno" />
+            <Button fx:id="btnCrearAlumno" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" onAction="#crearAlumno" prefWidth="150.0" text="Cargar alumno" />
 
-            <TextField id="campoNota" layoutX="225.0" layoutY="312.0" prefWidth="50.0" />
-            <Button id="btnGuardar"  onAction="#guardar" layoutX="285.0" layoutY="312.0" mnemonicParsing="false" prefWidth="90.0" text="Guardar" />
+            <TextField fx:id="campoNota" layoutX="225.0" layoutY="312.0" prefWidth="50.0" />
+            <Button fx:id="btnGuardar" layoutX="285.0" layoutY="312.0" mnemonicParsing="false" onAction="#guardar" prefWidth="90.0" text="Guardar" />
+
+            <Button fx:id="btnListaNotas" layoutX="705.0" layoutY="100.0" mnemonicParsing="false" onAction="#listaNotas" prefWidth="150.0" text="Lista de notas" />
 
          </children>
 

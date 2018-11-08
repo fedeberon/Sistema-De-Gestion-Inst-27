@@ -1,9 +1,9 @@
  CREATE TABLE `usuarios` (
-  `USERNAME` varchar(50) NOT NULL,
-  `PASSWORD` varchar(45) NOT NULL,
-  `USU_NOMBRE` varchar(45) DEFAULT NULL,
-  `USU_APELLIDO` varchar(45) DEFAULT NULL,
-  `APELLIDO` varchar(255) DEFAULT NULL,
-  `NOMBRE` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`USERNAME`)
-);
+    `USERNAME` varchar(50) NOT NULL,
+    `PASSWORD` varchar(45) NOT NULL,
+    `USU_NOMBRE` varchar(45) DEFAULT NULL,
+    `USU_APELLIDO` varchar(45) DEFAULT NULL,
+    `APELLIDO` varchar(255) DEFAULT NULL,
+    `NOMBRE` varchar(255) DEFAULT NULL,
+    PRIMARY KEY (`USERNAME`)
+  );
