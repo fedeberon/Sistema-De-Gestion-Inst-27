@@ -66,7 +66,7 @@ public class Verificador {
             return false;
         }
 
-        //Verificacion parte por parte de cada campo que compone el CUIL, tanto de longitud, como de composiciòn (solo se aceptan numeros)
+        //Verificacion parte por parte de cada campo que compone el CUIL, tanto de longitud, como de composicin (solo se aceptan numeros)
         if(cuil[0].length()!=2 || !chequearNumero(cuil[0],false)){
              return false;
         }

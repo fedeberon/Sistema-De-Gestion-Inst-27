@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity"  fx:controller="com.instituto27.controller.inscripciones.InscripcionController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fill="#8e07fc" layoutX="191.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscripciones" wrappingWidth="217.13671875">
          <font>
@@ -18,15 +18,17 @@
          </font>
       </Text>
       <Separator layoutX="11.0" layoutY="71.0" prefHeight="4.0" prefWidth="582.0" />
-      <Text layoutX="50.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Establecimiento :" wrappingWidth="96.13671875" />
-      <TextField layoutX="146.0" layoutY="88.0" />
-      <Text layoutX="51.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dni :" wrappingWidth="46.13671875" />
-      <TextField layoutX="146.0" layoutY="146.0" />
-      <Text layoutX="49.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrera :" wrappingWidth="59.498046875" />
-      <ComboBox layoutX="145.0" layoutY="209.0" prefWidth="150.0" />
-      <Button layoutX="146.0" layoutY="309.0" mnemonicParsing="false" text="Guardar" />
-      <Button layoutX="344.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
-      <ImageView fitHeight="66.0" fitWidth="61.0" layoutX="21.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+
+        <Text layoutX="51.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI: " wrappingWidth="46.13671875" />
+        <TextField layoutX="146.0" layoutY="146.0" fx:id="txtDni" />
+
+       <Text layoutX="49.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrera: " wrappingWidth="59.498046875" />
+        <ComboBox layoutX="145.0"  layoutY="209.0" prefWidth="150.0" fx:id="cmbCarrera"  />
+
+        <Button layoutX="146.0" layoutY="309.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+        <Button layoutX="344.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
+
+       <ImageView fitHeight="66.0" fitWidth="61.0" layoutX="21.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../.IntelliJIdea2016.2/proyecto/Sistema-De-Gestion-Inst-27/src/main/resources/images/logoInstituto.png" />
          </image>
