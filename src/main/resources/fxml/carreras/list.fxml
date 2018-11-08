@@ -49,6 +49,7 @@
             <Button layoutX="453.0" layoutY="294.0" mnemonicParsing="false" onAction="#guardarCarrera" prefHeight="25.0" prefWidth="130.0" text="Crear nueva carrera" />
             <!--Boton que al presionarlo despliega "/fxml/carreras/home.fxml"-->
             <Button layoutX="313.0" layoutY="294.0" mnemonicParsing="false" onAction="#atrasHome" prefHeight="25.0" prefWidth="130.0" text="Atras" />
+            <!--Boton Boton para borrar carreras-->
             <Button layoutX="594.0" layoutY="294.0" mnemonicParsing="false" onAction="#borrarCarrera" prefHeight="25.0" prefWidth="130.0" text="Borrar carrera" />
 
          </children>
