@@ -3,7 +3,6 @@ package com.instituto27.controller.alumnos;
 import com.instituto27.domain.Alumno;
 import com.instituto27.main.Main;
 import com.instituto27.service.alumno.AlumnoService;
-import com.instituto27.service.profesor.validar.ValidacionDeString;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,10 +45,6 @@ public class MenuAlumnoController {
 
     @Autowired
     private AlumnoService alumnoService;
-
-    @Autowired
-    private ValidacionDeString validacionDeString;
-
 
     public void buscarAlumnos(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/show.fxml"));

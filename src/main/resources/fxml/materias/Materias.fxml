@@ -16,10 +16,12 @@
      
       <Label layoutX="40.0" layoutY="199.0" prefHeight="25.0" prefWidth="104.0" text=" Materia" />
       <Button fx:id="btnCrearCarrera" layoutX="236.0" layoutY="145.0" mnemonicParsing="false" onAction="#crearCarrera" text="Crear Carrera" />
+      <Button fx:id="btnCrearProfesor" layoutX="236.0" layoutY="286.0" mnemonicParsing="false"  text="Ingresar Profesor" />
       <Label layoutX="45.0" layoutY="261.0" prefHeight="25.0" prefWidth="56.0" text="Profesor" />
       <Button layoutX="72.0" layoutY="424.0" mnemonicParsing="false" onAction="#btnGuardar" prefHeight="25.0" prefWidth="86.0" text="Guardar" />
       <Label layoutX="40.0" layoutY="327.0" prefHeight="25.0" prefWidth="104.0" text="Plan de Estudios" />
       <ComboBox fx:id="cmbCarreras" layoutX="45.0" layoutY="145.0" prefHeight="25.0" prefWidth="149.0" />
+      <ComboBox id="cmbProfesores" layoutX="41.0" layoutY="286.0" prefHeight="25.0" prefWidth="149.0" />
       <Separator layoutX="41.0" layoutY="88.0" prefHeight="4.0" prefWidth="476.0" />
       <Label layoutX="117.0" layoutY="36.0" prefHeight="25.0" prefWidth="86.0" text=" Materias" textFill="#3a1c9d">
          <font>
@@ -31,7 +33,6 @@
             <Image url="@../../images/logoInstituto.png" />
          </image>
       </ImageView>
-      <TextField fx:id="profesor" layoutX="41.0" layoutY="286.0" />
       <TextField fx:id="txtNombre" layoutX="41.0" layoutY="224.0" />
       <ComboBox layoutX="40.0" layoutY="361.0" prefWidth="150.0" />
    </children>

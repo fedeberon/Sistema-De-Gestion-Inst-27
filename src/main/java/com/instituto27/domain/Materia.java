@@ -24,6 +24,7 @@ public class Materia {
     @JoinColumn(name = "MAT_CAR_ID")
     private Carrera carrera;
 
+
     public Long getId() {
         return id;
     }

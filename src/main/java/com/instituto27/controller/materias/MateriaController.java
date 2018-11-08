@@ -1,6 +1,6 @@
 package com.instituto27.controller.materias;
 
-import com.instituto27.domain.Alumno;
+
 import com.instituto27.domain.Materia;
 import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
@@ -15,9 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +45,7 @@ public class MateriaController implements Initializable{
     public Button btnGuardar;
 
     @FXML
-    public ComboBox<String> cmbCarreras;
+    public ComboBox<Carrera> cmbCarreras;
 
     @Autowired
     MateriaService materiaService;
@@ -73,11 +71,11 @@ public class MateriaController implements Initializable{
         materiaService.save(materia);
     }
 
-    public ObservableList<String> getEnseignant() {
-        ObservableList<String> enseignantList = FXCollections.observableArrayList();
+    public ObservableList<Carrera> getEnseignant() {
+        ObservableList<Carrera> enseignantList = FXCollections.observableArrayList();
         List<Carrera> eList = carreraService.findAll();
         for (Carrera ent : eList) {
-            enseignantList.add(ent.getNombre());
+            enseignantList.add(ent);
         }
         return enseignantList;
     }
@@ -86,5 +84,6 @@ public class MateriaController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         cmbCarreras.setItems(getEnseignant());
     }
+
 }
 
