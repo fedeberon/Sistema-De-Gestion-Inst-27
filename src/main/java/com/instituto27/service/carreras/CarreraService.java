@@ -26,5 +26,9 @@ public class CarreraService {
     public List<Carrera> findAll(){
         return dao.findAll();
     }
+
+    public  Carrera delete(Carrera id){
+        return dao.delete(id);
+    }
 }
 

@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,6 +36,8 @@ public class CarreraController {
     public CarreraMenuController carreraMenuController;
     @Autowired
     public CarreraFormController carreraFormController;
+    @Autowired
+    public SessionFactory sessionFactory;
 
     public void initialize(){
         colNom.setCellValueFactory(new PropertyValueFactory<Carrera, String>("nombre"));
@@ -56,5 +60,11 @@ public class CarreraController {
     //Al presionar "Atras" en la seccion lista, te redirecciona a "/fxml/carreras/home.fxml"
     public void atrasHome(ActionEvent actionEvent) throws IOException {
         carreraFormController.atrasHome(actionEvent);
+    }
+    //Elimina todos los registros de la tabla y la base de datos
+    public void borrarCarrera(ActionEvent actionEvent) {
+        Carrera carrera = listCarreras.getSelectionModel().getSelectedItem();
+        listCarreras.getItems().remove(carrera);
+        carreraService.delete(carrera);
     }
 }

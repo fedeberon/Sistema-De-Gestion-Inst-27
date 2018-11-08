@@ -19,7 +19,6 @@ public class ProfesorRepository {
         return profesor;
     }
 
-    public List<Profesor>
 
 
 }
