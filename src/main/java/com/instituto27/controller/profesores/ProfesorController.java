@@ -46,6 +46,12 @@ public class ProfesorController{
     @FXML
     public Label mensajeError;
 
+    @FXML
+    public ComboBox comboNombreProfesores;
+
+    @FXML
+    public ScrollPane listaDeMateriasAElegir;
+
 
     private ProfesorService profesorService = new ProfesorService();
     private LocalDate diaNacimiento;
@@ -54,7 +60,7 @@ public class ProfesorController{
     public void guardar(ActionEvent actionEvent) {
         /*Antes de intentar guardar los datos en la base, elimina cualquier probabilidad de cargar datos erroneos*/
 
-        boolean[] validaciones = new boolean[8];
+        boolean[] validaciones = new boolean[7];
         validaciones[0] = profesorService.verificarTextoObligatorio(campoNombre.getText()) && campoNombre.getText().length() < 46;
         validaciones[1] = profesorService.verificarTextoObligatorio(campoApellido.getText()) && campoApellido.getText().length() < 46;
         validaciones[2] = campoDireccion.getText().length() <46;
@@ -62,9 +68,9 @@ public class ProfesorController{
         validaciones[4] = profesorService.verificarNumero(campoCelular.getText()) && campoCelular.getText().length() < 46;
         validaciones[5] = profesorService.verificarNumero(campoFijo.getText()) && campoFijo.getText().length() < 46;
         validaciones[6] = profesorService.verificarCuil(campoCuilA.getText(), campoCuilB.getText(), campoCuilC.getText());
-        //validaciones[7] = profesorService.verificarFecha(campoFecha.getEditor().getText());
-
-        /*La siguiente seccion concatena todos los nombres de error que puedan ir surgientdo*/
+        /*La siguiente seccion concatena todos los nombres de error que puedan ir surgientdo
+          No hay ningun verificador para la fecha porque el selector de fecha no permite que
+          se introduzca ningun dato inapropiado*/
 
         ArrayList<String> msjError = new ArrayList<>();
         StringBuilder msjErrorFinal = new StringBuilder();
@@ -75,6 +81,7 @@ public class ProfesorController{
             }
         }
 
+        //Verifica una por una las validaciones realizadas y registra cualquier error que suceda
         for (int i = 0; i<validaciones.length; i++){
             switch (i){
                 case 0:
@@ -82,21 +89,19 @@ public class ProfesorController{
                 case 1:
                     if(!validaciones[1]){msjError.add("apellido");}break;
                 case 2:
-                    if(!validaciones[2]){msjError.add("dirección");}break;
+                    if(!validaciones[2]){msjError.add("direccion");}break;
                 case 3:
                     if(!validaciones[3]){msjError.add("numero");}break;
                 case 4:
                     if(!validaciones[4]){msjError.add("celular");}break;
                 case 5:
                     if(!validaciones[5]){msjError.add("tel. fijo");}break;
-                case 6:
-                    if(!validaciones[6]){msjError.add("cuil");}break;
                 default:
-                    if(!validaciones[7]){msjError.add("fecha de nacimiento");}
-
+                    if(!validaciones[6]){msjError.add("cuil");}break;
             }
         }
 
+        //Une cada uno de los mensajes de error que puedan surgir.
         for (int i = 0; i<msjError.size(); i++){
             if(msjError.size() != 0){
                 msjErrorFinal.append(msjError.get(i));
@@ -113,9 +118,5 @@ public class ProfesorController{
         }else{
             mensajeError.setText("*: Campo obligatorio");
         }
-
-
     }
-
-
 }

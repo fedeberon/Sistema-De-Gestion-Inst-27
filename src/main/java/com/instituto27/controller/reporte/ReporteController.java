@@ -18,21 +18,9 @@ public class ReporteController {
     @Autowired
     private AlumnoService alumnoService;
 
-    public void btnProfesores(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/ReporteProfesor.fxml"));
-        fxmlLoader.setControllerFactory(Main.springContext::getBean);
-
-        Stage s = Main.getPrimaryStage();
-        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
-        pnl_scroll.getChildren().clear();
-        Node[] nodes = new  Node[2];
-        nodes[1] = fxmlLoader.load();
-        pnl_scroll.getChildren().add(nodes[1]);
-
-    }
 
     public void btnAlumnos(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/ReporteAlumno.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/alumno/ReporteAlumno.fxml"));
         fxmlLoader.setControllerFactory(Main.springContext::getBean);
 
         Stage s = Main.getPrimaryStage();
@@ -41,11 +29,50 @@ public class ReporteController {
         Node[] nodes = new  Node[2];
         nodes[1] = fxmlLoader.load();
         pnl_scroll.getChildren().add(nodes[1]);
+
     }
 
+    public void btnProfesores(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/profesor/ReporteProfesor.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node[] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+
+    }
 
     public void btnAtras(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/Reportes.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node[] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+
+    }
+
+    public void btnGenerarReporteAlumno(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/alumno/List.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node[] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+
+    }
+
+    public void btnGenerarReporteProfesor(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reporte/profesor/List.fxml"));
         fxmlLoader.setControllerFactory(Main.springContext::getBean);
 
         Stage s = Main.getPrimaryStage();

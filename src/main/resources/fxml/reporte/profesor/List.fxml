@@ -5,6 +5,8 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,12 +25,12 @@
                 <!--Logo del panel"-->
                 <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../images/logoInstituto.png" />
+                        <Image url="@../../../images/logoInstituto.png" />
                     </image>
                 </ImageView>
 
                 <!--Label titulo principal-->
-                <Label layoutX="111.0" layoutY="33.0" text="Reportes" textFill="#3a1c9d">
+                <Label layoutX="111.0" layoutY="33.0" text="Reporte Profesor" textFill="#3a1c9d">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -38,23 +40,16 @@
                 <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
 
                 <AmbientLight color="CHARTREUSE" layoutX="253.0" layoutY="194.0" lightOn="true" />
-            <CheckBox layoutX="34.0" layoutY="136.0" mnemonicParsing="false" text="CheckBox" />
-            <CheckBox layoutX="34.0" layoutY="161.0" mnemonicParsing="false" text="CheckBox" />
-            <Label layoutX="34.0" layoutY="107.0" text="Label" />
-            <Label layoutX="34.0" layoutY="194.0" text="EXAMEN" />
-            <CheckBox layoutX="34.0" layoutY="211.0" mnemonicParsing="false" text="CheckBox" />
-            <CheckBox layoutX="34.0" layoutY="237.0" mnemonicParsing="false" text="CheckBox" />
-            <Button onAction="#btnAtras" layoutX="825.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Atras" />
-
-
-
-
-
-
-
-
-
-
+                <TableView fx:id="tablaAlumnos" layoutX="42.0" layoutY="102.0" prefHeight="338.0" prefWidth="777.0">
+                    <columns>
+                        <TableColumn fx:id="itemNameCol" prefWidth="96.0" text="ID" />
+                        <TableColumn fx:id="itemApeCol" prefWidth="143.0" text="Nombre" />
+                        <TableColumn fx:id="itemDNICol" prefWidth="149.0" text="Apellido" />
+                        <TableColumn fx:id="itemIdCol" prefWidth="126.0" text="DNI" />
+                        <TableColumn prefWidth="156.0" text="Materia" />
+                    </columns>
+                </TableView>
+                <Button layoutX="825.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnAtras" prefHeight="25.0" prefWidth="57.0" text="Atras" />
 
 
             </children>

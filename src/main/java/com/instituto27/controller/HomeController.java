@@ -62,7 +62,7 @@ public class HomeController implements Initializable {
     public void btnAlumnos(ActionEvent actionEvent) throws IOException {
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
-        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/alumno/Alumnos.fxml"));
+        nodes[1] = (Node)FXMLLoader.load(getClass().getResource("/fxml/alumno/home.fxml"));
         pnl_scroll.getChildren().add(nodes[1]);
     }
 
@@ -70,7 +70,7 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
         Integer v = 1;
-        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
+        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/profesor/Profesor.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
@@ -78,7 +78,7 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
         Integer v = 1;
-        nodes[v] = (Node) FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
+        nodes[v] = (Node) FXMLLoader.load(getClass().getResource("/fxml/carreras/home.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
         pnl_scroll.setVisible(true);
 }
@@ -104,5 +104,10 @@ public class HomeController implements Initializable {
         Integer v = 1;
         nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/inscripciones/inscripciones.fxml"));
         pnl_scroll.getChildren().add(nodes[v]);
+    }
+    public void btnMaterias(ActionEvent actionEvent) {
+    }
+
+    public void btnNotas(ActionEvent actionEvent) {
     }
 }
