@@ -1,5 +1,6 @@
 package com.instituto27.controller.profesores;
 
+import com.instituto27.service.Verificador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -60,14 +61,16 @@ public class ProfesorController{
     public void guardar(ActionEvent actionEvent) {
         /*Antes de intentar guardar los datos en la base, elimina cualquier probabilidad de cargar datos erroneos*/
 
+        Verificador verificador = new Verificador();
+
         boolean[] validaciones = new boolean[7];
-        validaciones[0] = profesorService.verificarTextoObligatorio(campoNombre.getText()) && campoNombre.getText().length() < 46;
-        validaciones[1] = profesorService.verificarTextoObligatorio(campoApellido.getText()) && campoApellido.getText().length() < 46;
+        validaciones[0] = verificador.chequearTexto(campoNombre.getText(), false) && campoNombre.getText().length() < 46;
+        validaciones[1] = verificador.chequearTexto(campoApellido.getText(), false) && campoApellido.getText().length() < 46;
         validaciones[2] = campoDireccion.getText().length() <46;
-        validaciones[3] = profesorService.verificarNumero(campoNumero.getText()) && campoNumero.getText().length() < 5;
-        validaciones[4] = profesorService.verificarNumero(campoCelular.getText()) && campoCelular.getText().length() < 46;
-        validaciones[5] = profesorService.verificarNumero(campoFijo.getText()) && campoFijo.getText().length() < 46;
-        validaciones[6] = profesorService.verificarCuil(campoCuilA.getText(), campoCuilB.getText(), campoCuilC.getText());
+        validaciones[3] = verificador.chequearNumero(campoNumero.getText(), true) && campoNumero.getText().length() < 5;
+        validaciones[4] = verificador.chequearNumero(campoCelular.getText(), true) && campoCelular.getText().length() < 46;
+        validaciones[5] = verificador.chequearNumero(campoFijo.getText(), true) && campoFijo.getText().length() < 46;
+        validaciones[6] = verificador.chequearCuil(new String[]{campoCuilA.getText(), campoCuilB.getText(), campoCuilC.getText()});
         /*La siguiente seccion concatena todos los nombres de error que puedan ir surgientdo
           No hay ningun verificador para la fecha porque el selector de fecha no permite que
           se introduzca ningun dato inapropiado*/
@@ -117,6 +120,7 @@ public class ProfesorController{
             mensajeError.setText(msjErrorFinal.toString());
         }else{
             mensajeError.setText("*: Campo obligatorio");
+
         }
     }
 }
