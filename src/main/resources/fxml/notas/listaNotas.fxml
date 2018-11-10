@@ -38,7 +38,7 @@
             <ComboBox layoutX="73.0" layoutY="107.0" prefWidth="150.0" promptText="Carrera" />
             <ComboBox layoutX="240.0" layoutY="107.0" prefWidth="150.0" promptText="Materia" />
             <Button layoutX="406.0" layoutY="107.0" mnemonicParsing="false" text="Buscar" />
-            <Button fx:id="crearNota" layoutX="744.0" layoutY="107.0" mnemonicParsing="false" onAction="#crearNota" text="Cargar nota" />
+            <Button fx:id="btnCrearNota" layoutX="744.0" layoutY="107.0" mnemonicParsing="false" onAction="#crearNota" text="Cargar nota" />
 
             <TableView layoutX="73.0" layoutY="190.0" prefHeight="278.0" prefWidth="750.0">
               <columns>

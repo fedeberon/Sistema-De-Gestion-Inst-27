@@ -2,7 +2,6 @@ package com.instituto27.controller.notas;
 
 
 import com.instituto27.domain.Alumno;
-import com.instituto27.domain.Materia;
 import com.instituto27.domain.Nota;
 import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
@@ -91,19 +90,14 @@ public class NotaController implements Initializable {
 
     /* TRAER MATERIA (PROVISIONAL) */
     public ObservableList<String> getList() {
-        return list;
+        return listMateria;
     }
 
     public void setList(ObservableList<String> list) {
-        this.list = list;
+        this.listMateria = list;
     }
 
-    public ObservableList<String> list = FXCollections.observableArrayList("Programacion", "Matematica");
-
-    public void initialize(URL location, ResourceBundle resources) {
-        this.cargarComboDeCarreras();
-        cmbMateria.setItems(list);
-    }
+    public ObservableList<String> listMateria = FXCollections.observableArrayList("Programacion", "Matematica");
 
     /* IR A LA INTERFAZ DEL MÓDULO MATERIA */
     public void crearMateria(ActionEvent actionEvent) throws IOException {
@@ -117,7 +111,7 @@ public class NotaController implements Initializable {
     }
 
     /* TRAER LA LISTA DE ALUMNO */
-    public void cargarComboDeMateria() {
+    public void cargarComboDeAlumno() {
         ObservableList<Alumno> enseignantList = FXCollections.observableArrayList();
         List<Alumno> alumnos = alumnoService.findAll();
         for (Alumno ent : alumnos) {
@@ -157,6 +151,12 @@ public class NotaController implements Initializable {
          nota.setNota(campoNota.getText());
 
         notaService.save(nota);
+    }
+
+    public void initialize(URL location, ResourceBundle resources) {
+        this.cargarComboDeCarreras();
+        this.cargarComboDeAlumno();
+        cmbMateria.setItems(listMateria);
     }
 
 

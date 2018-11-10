@@ -1,5 +1,6 @@
 package com.instituto27.dao.nota;
 
+import com.instituto27.domain.Alumno;
 import com.instituto27.domain.Nota;
 import com.instituto27.domain.carrera.Carrera;
 import org.hibernate.Session;
@@ -29,4 +30,5 @@ public class NotaRepository {
 
         return query.list();
     }
+
 }

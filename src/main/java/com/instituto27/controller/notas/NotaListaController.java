@@ -19,7 +19,7 @@ import java.io.IOException;
 public class NotaListaController {
 
     @FXML
-    public Button crearNota;
+    public Button btnCrearNota;
 
     @Autowired
     public NotaService notaService;
