@@ -1,6 +1,8 @@
 package com.instituto27.controller.notas;
 
 
+import com.instituto27.domain.Alumno;
+import com.instituto27.domain.Materia;
 import com.instituto27.domain.Nota;
 import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
@@ -43,7 +45,7 @@ public class NotaController implements Initializable {
     public Button btnCrearMateria;
 
     @FXML
-    public ComboBox<String> cmbAlumno;
+    public ComboBox<Alumno> cmbAlumno;
 
     @FXML
     public Button btnCrearAlumno;
@@ -52,7 +54,7 @@ public class NotaController implements Initializable {
     public TextField campoNota;
 
     @FXML
-    public Button botonGuardar;
+    public Button btnGuardar;
 
     @Autowired
     public NotaService notaService ;
@@ -63,16 +65,7 @@ public class NotaController implements Initializable {
     @Autowired
     private AlumnoService alumnoService;
 
-    public void crearCarrera(ActionEvent actionEvent) throws IOException {
-        Node[] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
-        Stage s = Main.getPrimaryStage();
-        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
-        pnl_scroll.getChildren().clear();
-        pnl_scroll.getChildren().add(nodes[v]);
-    }
-
+    /* TRAER LA LISTA DE CARRERAS */
     public void cargarComboDeCarreras() {
         ObservableList<Carrera> enseignantList = FXCollections.observableArrayList();
         List<Carrera> carrreras = carreraService.findAll();
@@ -85,10 +78,80 @@ public class NotaController implements Initializable {
         }
     }
 
-    public void initialize(URL location, ResourceBundle resources) {
-         this.cargarComboDeCarreras();
+    /* IR A LA INTERFAZ DEL MÓDULO CARRERA */
+    public void crearCarrera(ActionEvent actionEvent) throws IOException {
+        Node[] nodes = new  Node[2];
+        Integer v = 1;
+        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        pnl_scroll.getChildren().add(nodes[v]);
     }
 
+    /* TRAER MATERIA (PROVISIONAL) */
+    public ObservableList<String> getList() {
+        return list;
+    }
+
+    public void setList(ObservableList<String> list) {
+        this.list = list;
+    }
+
+    public ObservableList<String> list = FXCollections.observableArrayList("Programacion", "Matematica");
+
+    public void initialize(URL location, ResourceBundle resources) {
+        this.cargarComboDeCarreras();
+        cmbMateria.setItems(list);
+    }
+
+    /* IR A LA INTERFAZ DEL MÓDULO MATERIA */
+    public void crearMateria(ActionEvent actionEvent) throws IOException {
+        Node[] nodes = new  Node[2];
+        Integer v = 1;
+        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/materias/Materias.fxml"));
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        pnl_scroll.getChildren().add(nodes[v]);
+    }
+
+    /* TRAER LA LISTA DE ALUMNO */
+    public void cargarComboDeMateria() {
+        ObservableList<Alumno> enseignantList = FXCollections.observableArrayList();
+        List<Alumno> alumnos = alumnoService.findAll();
+        for (Alumno ent : alumnos) {
+            enseignantList.add(ent);
+        }
+
+        if(enseignantList.size() != 0){
+            cmbAlumno.setItems(enseignantList);
+        }
+    }
+
+    /* IR A LA INTERFAZ DEL MÓDULO ALUMNO */
+    public void crearAlumno(ActionEvent actionEvent) throws IOException {
+        Node[] nodes = new  Node[2];
+        Integer v = 1;
+        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/alumno/create.fxml"));
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        pnl_scroll.getChildren().add(nodes[v]);
+    }
+
+    /* IR A LA INTERFAZ LISTA DE NOTAS */
+    public void listaNotas(ActionEvent actionEvent) throws IOException {
+        Node[] nodes = new  Node[2];
+        Integer v = 1;
+        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/notas/listaNotas.fxml"));
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        pnl_scroll.getChildren().add(nodes[v]);
+    }
+
+    /* GUARDAR EN LA TABLA NOTAS */
     public void guardar(ActionEvent actionEvent) throws IOException {
          Nota nota = new Nota();
          nota.setNota(campoNota.getText());

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.152" >
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.notas.NotaListaController">
 
    <children>
 
@@ -38,14 +38,16 @@
             <ComboBox layoutX="73.0" layoutY="107.0" prefWidth="150.0" promptText="Carrera" />
             <ComboBox layoutX="240.0" layoutY="107.0" prefWidth="150.0" promptText="Materia" />
             <Button layoutX="406.0" layoutY="107.0" mnemonicParsing="false" text="Buscar" />
+            <Button fx:id="crearNota" layoutX="744.0" layoutY="107.0" mnemonicParsing="false" onAction="#crearNota" text="Cargar nota" />
 
             <TableView layoutX="73.0" layoutY="190.0" prefHeight="278.0" prefWidth="750.0">
               <columns>
-                 <TableColumn prefWidth="75.0" text="ID" />
-                 <TableColumn prefWidth="150.0" text="Nombre" />
-                 <TableColumn prefWidth="150.0" text="Apellido" />
-                 <TableColumn prefWidth="300.0" text="Materia" />
-                 <TableColumn prefWidth="75.0" text="Nota" />
+                 <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+                 <TableColumn fx:id="colCarrera" prefWidth="200.0" text="Carrera" />
+                 <TableColumn fx:id="colMateria" prefWidth="200.0" text="Materia" />
+                 <TableColumn fx:id="colNombre" prefWidth="100.0" text="Nombre" />
+                 <TableColumn fx:id="colApellido" prefWidth="100.0" text="Apellido" />
+                 <TableColumn fx:id="colNota" prefWidth="75.0" text="Nota" />
               </columns>
             </TableView>
 

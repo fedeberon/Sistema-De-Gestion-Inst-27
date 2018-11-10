@@ -23,7 +23,7 @@ public class NotaRepository {
         return nota;
     }
 
-    public List<Nota> findAll() {
+    public List<Carrera> findAll() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("from Nota");
 
