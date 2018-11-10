@@ -46,8 +46,6 @@ public class AlumnoController  implements Initializable {
         tablaAlumnos.setItems(getEnseignant());
     }
 
-
-
     public ObservableList<Alumno> getEnseignant() {
         ObservableList<Alumno> enseignantList = FXCollections.observableArrayList();
         List<Alumno> eList = alumnoService.findAll();
@@ -56,8 +54,6 @@ public class AlumnoController  implements Initializable {
         }
         return enseignantList;
     }
-
-
 
     public void showAtras(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/home.fxml"));
