@@ -18,6 +18,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -48,10 +49,13 @@ public class MateriaController implements Initializable{
     public ComboBox<Carrera> cmbCarreras;
 
     @Autowired
-    MateriaService materiaService;
+    private MateriaService materiaService;
 
     @Autowired
     public CarreraService carreraService;
+
+    @Autowired
+    public SessionFactory SessionFactory;
 
     public void crearCarrera(ActionEvent actionEvent) throws IOException {
         Node[] nodes = new  Node[2];
@@ -66,7 +70,6 @@ public class MateriaController implements Initializable{
     public void btnGuardar(ActionEvent actionEvent) throws IOException {
         Materia materia = new Materia();
         materia.setNombre(txtNombre.getText());
-        materia.setProfesor(profesor.getText());
 
         materiaService.save(materia);
     }
@@ -82,8 +85,11 @@ public class MateriaController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cmbCarreras.setItems(getEnseignant());
+     cmbCarreras.setItems(getEnseignant());
     }
+
+
+
 
 }
 

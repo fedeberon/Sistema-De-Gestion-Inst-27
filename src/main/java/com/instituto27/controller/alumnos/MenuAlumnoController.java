@@ -46,6 +46,7 @@ public class MenuAlumnoController {
     @Autowired
     private AlumnoService alumnoService;
 
+
     public void buscarAlumnos(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/show.fxml"));
         fxmlLoader.setControllerFactory(Main.springContext::getBean);

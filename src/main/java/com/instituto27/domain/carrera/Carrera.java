@@ -14,7 +14,7 @@ public class Carrera {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="CAR_ID")
+    @Column(name = "CAR_ID")
     private Integer id;
 
     @Column(name = "CAR_NOMBRE")
@@ -50,11 +50,18 @@ public class Carrera {
         this.nombre = nombre;
     }
 
+
     public List<Materia> getMaterias() {
         return materias;
     }
 
     public void setMaterias(List<Materia> materias) {
         this.materias = materias;
+
+    }
+
+    @Override
+    public String toString() {
+        return nombre ;
     }
 }

@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -85,12 +86,14 @@ public class HomeController implements Initializable {
     }
 
     public void btnMaterias (ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/materias/Materias.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
-        Node [] nodes = new  Node[6];
-        Integer v = 1;
-        nodes[v]=(Node) FXMLLoader.load(getClass().getResource("/fxml/materias/Materias.fxml"));
-        pnl_scroll.getChildren().add(nodes[v]);
-        pnl_scroll.setVisible(true);
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
 
@@ -102,5 +105,30 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
+
+    public void btnInscripcion(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/inscripciones/inscripciones.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+    }
+
+
+
+
+    public void btnNotas(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/notas/Notas.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node[] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+    }
 
 }

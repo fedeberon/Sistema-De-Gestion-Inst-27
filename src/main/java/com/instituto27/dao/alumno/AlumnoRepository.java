@@ -33,5 +33,14 @@ public class AlumnoRepository {
     }
 
 
+    public Alumno getByDni(String dni) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Alumno where DNI = :dni");
+        query.setParameter("dni", dni);
+
+        return (Alumno) query.uniqueResult();
+    }
+
+
 
 }

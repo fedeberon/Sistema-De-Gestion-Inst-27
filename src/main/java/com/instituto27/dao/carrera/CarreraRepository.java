@@ -33,4 +33,12 @@ public class CarreraRepository {
         return query.list();
 
     }
+    public Carrera delete(Carrera id){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.delete(id);
+        session.getTransaction().commit();
+        session.close();
+        return id;
+    }
 }
