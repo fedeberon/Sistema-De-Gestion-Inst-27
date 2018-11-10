@@ -1,5 +1,6 @@
 package com.instituto27.dao.nota;
 
+import com.instituto27.domain.Alumno;
 import com.instituto27.domain.Nota;
 import com.instituto27.domain.carrera.Carrera;
 import org.hibernate.Session;
@@ -23,10 +24,11 @@ public class NotaRepository {
         return nota;
     }
 
-    public List<Nota> findAll() {
+    public List<Carrera> findAll() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("from Nota");
 
         return query.list();
     }
+
 }

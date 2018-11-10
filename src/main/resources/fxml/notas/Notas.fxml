@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.notas.NotaController">
+<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.notas.NotaController">
 
    <children>
 
@@ -45,8 +45,7 @@
 
             <TextField fx:id="campoNota" layoutX="225.0" layoutY="312.0" prefWidth="50.0" />
             <Button fx:id="btnGuardar" layoutX="285.0" layoutY="312.0" mnemonicParsing="false" onAction="#guardar" prefWidth="90.0" text="Guardar" />
-
-            <Button fx:id="btnListaNotas" layoutX="705.0" layoutY="100.0" mnemonicParsing="false" onAction="#listaNotas" prefWidth="150.0" text="Lista de notas" />
+            <Button fx:id="btnListaNotas" layoutX="708.0" layoutY="100.0" mnemonicParsing="false" onAction="#listaNotas" prefWidth="150.0" text="Lista de notas" />
 
          </children>
 

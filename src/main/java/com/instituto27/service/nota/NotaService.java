@@ -1,7 +1,9 @@
 package com.instituto27.service.nota;
 
 import com.instituto27.dao.nota.NotaRepository;
+import com.instituto27.domain.Alumno;
 import com.instituto27.domain.Nota;
+import com.instituto27.domain.carrera.Carrera;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +19,7 @@ public class NotaService {
         return dao.save(nota);
     }
 
-    public List<Nota> findAll() {
+    public List<Carrera> findAll() {
         return dao.findAll();
     }
 }
