@@ -5,6 +5,7 @@
  */
 package com.instituto27.controller;
 
+import com.instituto27.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -92,9 +94,31 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().add(nodes[v]);
     }
 
+
+
+    public void btnInscripcion(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/inscripciones/inscripciones.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+    }
+
+
     public void btnMaterias(ActionEvent actionEvent) {
     }
 
-    public void btnNotas(ActionEvent actionEvent) {
+    public void btnNotas(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/notas/Notas.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node[] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 }

@@ -5,9 +5,6 @@ import com.instituto27.domain.carrera.Carrera;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,6 +22,10 @@ public class CarreraService {
 
     public List<Carrera> findAll(){
         return dao.findAll();
+    }
+
+    public  Carrera delete(Carrera id){
+        return dao.delete(id);
     }
 }
 
