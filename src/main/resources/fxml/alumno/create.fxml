@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -7,7 +12,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.alumnos.MenuAlumnoController">
+
+<AnchorPane prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.alumnos.MenuAlumnoController">
 
    <children>
 
@@ -28,13 +34,13 @@
                </font>
             </Label>
 
-            <Label layoutX="41.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="Nombre" />
+            <Label layoutX="41.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="Nombre*" />
             <TextField fx:id="aluNombre" layoutX="100.0" layoutY="102.0" prefHeight="25.0" prefWidth="123.0" />
 
-            <Label layoutX="243.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="Apellido" />
+            <Label layoutX="243.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="Apellido*" />
             <TextField fx:id="aluApellido" layoutX="302.0" layoutY="102.0" prefHeight="25.0" prefWidth="123.0" />
 
-            <Label layoutX="445.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="DNI" />
+            <Label layoutX="445.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="DNI*" />
             <TextField fx:id="aluDni" layoutX="494.0" layoutY="102.0" prefHeight="25.0" prefWidth="123.0" />
 
             <Label layoutX="637.0" layoutY="102.0" prefHeight="25.0" prefWidth="49.0" text="Fec. Nac." />
@@ -51,8 +57,10 @@
             <TextField fx:id="aluEmail" layoutX="494.0" layoutY="146.0" prefHeight="25.0" prefWidth="123.0" />
             <Label layoutX="445.0" layoutY="146.0" prefHeight="25.0" prefWidth="49.0" text="E-Mail" />
 
-            <Button onAction="#createAtras" layoutX="322.0" layoutY="216.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Atras" />
-            <Button onAction="#save" layoutX="458.0" layoutY="216.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cargar Alumno" textAlignment="RIGHT" />
+            <Label fx:id="mensajeError" layoutX="43.0" layoutY="189.0" prefHeight="27.0" prefWidth="764.0" text="* Campo obligatorio" textFill="RED" />
+
+            <Button layoutX="322.0" layoutY="224.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#createAtras" prefHeight="25.0" prefWidth="116.0" text="Atras" />
+            <Button layoutX="458.0" layoutY="224.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="116.0" text="Cargar Alumno" textAlignment="RIGHT" />
 
          </children>
 
