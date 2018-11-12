@@ -26,23 +26,23 @@ public class Profesor {
     private String direccion;
 
     @Column(name = "PRO_NUMERO")
-    private Integer numero;
+    private String numero;
 
     @Column(name = "PRO_CELULAR")
-    private Integer celular;
+    private String celular;
 
     @Column(name = "PRO_FIJO")
-    private Integer fijo;
+    private String fijo;
 
     @Column(name = "PRO_CUIL")
-    private Integer cuil;
+    private String cuil;
 
     @Column(name = "PRO_NACIMIENTO")
     private LocalDate nacimiento;
 
-    public Integer getId() {return id;}
+    public Integer getId(){return id;}
 
-    public void setId(Integer id) {this.id = id;}
+    public void setId(Integer id){this.id = id;}
 
     public String getNombre() { return nombre;}
 
@@ -56,23 +56,24 @@ public class Profesor {
 
     public void setDireccion(String direccion) {this.direccion = direccion;}
 
-    public Integer getNumero() {return numero;}
+    public String getNumero() {return numero;}
 
-    public void setNumero(Integer numero) {this.numero = numero;}
+    public void setNumero(String numero) {this.numero = numero;}
 
-    public Integer getCelular() {return celular;}
+    public String getCelular() {return celular;}
 
-    public void setCelular(Integer celular) {this.celular = celular;}
+    public void setCelular(String celular) {this.celular = celular;}
 
-    public Integer getFijo() {return fijo;}
+    public String getFijo() {return fijo;}
 
-    public void setFijo(Integer fijo) { this.fijo = fijo; }
+    public void setFijo(String fijo) { this.fijo = fijo; }
 
-    public Integer getCuil() {return cuil; }
+    public String getCuil() {return cuil; }
 
-    public void setCuil(Integer cuil) { this.cuil = cuil; }
+    public void setCuil(String cuil) { this.cuil = cuil; }
 
     public LocalDate getNacimiento() { return nacimiento; }
 
     public void setNacimiento(LocalDate nacimiento) {this.nacimiento = nacimiento;}
+
 }

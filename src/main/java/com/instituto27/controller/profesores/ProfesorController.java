@@ -1,18 +1,48 @@
 package com.instituto27.controller.profesores;
 
+import com.instituto27.domain.Profesor;
 import com.instituto27.service.Verificador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import com.instituto27.service.profesor.ProfesorService;
-
-import java.time.LocalDate;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class ProfesorController{
+
+    private boolean modificando = false;
+    private Integer idDelModificado;
+
+    @Autowired
+    private ProfesorService profesorService;
+
+    @FXML
+    public TabPane tabPane;
+
+    @FXML
+    public Tab loadTab;
+
+    @FXML
+    public Tab listTab;
+
+    @FXML
+    public Tab assignTab;
+
     @FXML
     public Button botonGuardar;
+
+    @FXML
+    public Button botonLimpiar;
 
     @FXML
     public TextField campoNombre;
@@ -53,12 +83,48 @@ public class ProfesorController{
     @FXML
     public ScrollPane listaDeMateriasAElegir;
 
+    @FXML
+    public TableView<Profesor> listProfesores;
 
-    private ProfesorService profesorService = new ProfesorService();
-    private LocalDate diaNacimiento;
+    @FXML
+    public TableColumn colNom;
 
+    @FXML
+    public TableColumn colApe;
 
-    public void guardar(ActionEvent actionEvent) {
+    @FXML
+    public TableColumn colDir;
+
+    @FXML
+    public TableColumn colNum;
+
+    @FXML
+    public TableColumn colCel;
+
+    @FXML
+    public TableColumn colFij;
+
+    @FXML
+    public TableColumn colCui;
+
+    @FXML
+    public TableColumn colFec;
+
+    @FXML
+    public Button botonAgregar;
+
+    @FXML
+    public Button botonModificar;
+
+    @FXML
+    public Button botonEliminar;
+
+    //Controles de asignacion de materias a profesores
+
+    //===========================================================================================
+    //Controles de la función de carga de profesores
+
+    public void guardar(ActionEvent actionEvent) throws IOException{
         /*Antes de intentar guardar los datos en la base, elimina cualquier probabilidad de cargar datos erroneos*/
 
         Verificador verificador = new Verificador();
@@ -66,11 +132,12 @@ public class ProfesorController{
         boolean[] validaciones = new boolean[7];
         validaciones[0] = verificador.chequearTexto(campoNombre.getText(), false) && campoNombre.getText().length() < 46;
         validaciones[1] = verificador.chequearTexto(campoApellido.getText(), false) && campoApellido.getText().length() < 46;
-        validaciones[2] = campoDireccion.getText().length() <46;
+        validaciones[2] = verificador.chequearEspacios(campoDireccion.getText(), true) && campoDireccion.getText().length() <46;
         validaciones[3] = verificador.chequearNumero(campoNumero.getText(), true) && campoNumero.getText().length() < 5;
         validaciones[4] = verificador.chequearNumero(campoCelular.getText(), true) && campoCelular.getText().length() < 46;
         validaciones[5] = verificador.chequearNumero(campoFijo.getText(), true) && campoFijo.getText().length() < 46;
         validaciones[6] = verificador.chequearCuil(new String[]{campoCuilA.getText(), campoCuilB.getText(), campoCuilC.getText()});
+
         /*La siguiente seccion concatena todos los nombres de error que puedan ir surgientdo
           No hay ningun verificador para la fecha porque el selector de fecha no permite que
           se introduzca ningun dato inapropiado*/
@@ -120,7 +187,99 @@ public class ProfesorController{
             mensajeError.setText(msjErrorFinal.toString());
         }else{
             mensajeError.setText("*: Campo obligatorio");
+            Profesor profesor = new Profesor();
+            profesor.setNombre(campoNombre.getText());
+            profesor.setApellido(campoApellido.getText());
+            profesor.setDireccion(campoDireccion.getText());
+            profesor.setNumero(campoNumero.getText());
+            profesor.setCelular(campoCelular.getText());
+            profesor.setFijo(campoFijo.getText());
+            profesor.setCuil(campoCuilA.getText()+campoCuilB.getText()+campoCuilC.getText());
+            profesor.setNacimiento(campoFecha.getValue());
 
+            if(modificando){
+                listTab.setDisable(false);
+                assignTab.setDisable(false);
+                tabPane.getSelectionModel().select(1);
+                profesor.setId(idDelModificado);
+                profesorService.update(profesor);
+                modificando = false;
+            }else{
+                profesorService.save(profesor);
+            }
+
+            this.limpiar();
+            this.initialize();
         }
     }
+
+    public void limpiar(){
+        campoNombre.clear();
+        campoApellido.clear();
+        campoDireccion.clear();
+        campoNumero.clear();
+        campoCelular.clear();
+        campoFijo.clear();
+        campoCuilA.clear();
+        campoCuilB.clear();
+        campoCuilC.clear();
+        campoFecha.getEditor().clear();
+    }
+
+    //===========================================================================================
+    //Controles encontrados en la lista de profesores
+
+    public void initialize(){
+        colNom.setCellValueFactory(new PropertyValueFactory<Profesor, String>("nombre"));
+        colApe.setCellValueFactory(new PropertyValueFactory<Profesor, String>("apellido"));
+        colDir.setCellValueFactory(new PropertyValueFactory<Profesor, String>("direccion"));
+        colNum.setCellValueFactory(new PropertyValueFactory<Profesor, String>("numero"));
+        colCel.setCellValueFactory(new PropertyValueFactory<Profesor, String>("celular"));
+        colFij.setCellValueFactory(new PropertyValueFactory<Profesor, String>("fijo"));
+        colCui.setCellValueFactory(new PropertyValueFactory<Profesor, String>("cuil"));
+        colFec.setCellValueFactory(new PropertyValueFactory<Profesor, String>("nacimiento"));
+        listProfesores.setItems(getEnseignant());
+        botonEliminar.disableProperty().bind(Bindings.isEmpty(listProfesores.getSelectionModel().getSelectedItems()));
+        botonModificar.disableProperty().bind(Bindings.isEmpty(listProfesores.getSelectionModel().getSelectedItems()));
+    }
+
+    public ObservableList<Profesor> getEnseignant() {
+        ObservableList<Profesor> enseignantList = FXCollections.observableArrayList();
+        List<Profesor> eList = profesorService.findAll();
+        for (Profesor ent : eList) {
+            enseignantList.add(ent);
+        }
+        return enseignantList;
+    }
+
+    public void agregar(){
+        tabPane.getSelectionModel().select(0);
+    }
+
+    public void modificar() {
+        Profesor profesor = listProfesores.getSelectionModel().getSelectedItem();
+        campoNombre.setText(profesor.getNombre());
+        campoApellido.setText(profesor.getApellido());
+        campoDireccion.setText(profesor.getDireccion());
+        campoNumero.setText(profesor.getNumero());
+        campoCelular.setText(profesor.getCelular());
+        campoFijo.setText(profesor.getFijo());
+        campoCuilA.setText(profesor.getCuil().isEmpty()?"":(profesor.getCuil().substring(0, 2)));
+        campoCuilB.setText(profesor.getCuil().isEmpty()?"":(profesor.getCuil().substring(2, 10)));
+        campoCuilC.setText(profesor.getCuil().isEmpty()?"":(profesor.getCuil().substring(10, 11)));
+        campoFecha.setValue(profesor.getNacimiento());
+        tabPane.getSelectionModel().select(0);
+        listTab.setDisable(true);
+        assignTab.setDisable(true);
+        modificando = true;
+        idDelModificado = profesor.getId();
+    }
+
+    //Elimina todos los registros de la tabla y la base de datos
+    public void eliminar() {
+        Profesor profesor = listProfesores.getSelectionModel().getSelectedItem();
+        listProfesores.getItems().remove(profesor);
+        profesorService.delete(profesor);
+    }
 }
+

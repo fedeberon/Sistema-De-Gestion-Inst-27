@@ -69,11 +69,14 @@ public class HomeController implements Initializable {
     }
 
     public void btnProfesores(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/profesor/Profesor.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
         Node [] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = (Node)FXMLLoader.load(getClass().getResource("/fxml/menu/Item.fxml"));
-        pnl_scroll.getChildren().add(nodes[v]);
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
     public void btnCarreras(ActionEvent actionEvent) throws IOException {
