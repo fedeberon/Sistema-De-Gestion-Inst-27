@@ -29,4 +29,8 @@ public class AlumnoService {
         return dao.getByDni(dni);
     }
 
+    public  Alumno delete(Alumno id){
+        return dao.delete(id);
+    }
+
 }

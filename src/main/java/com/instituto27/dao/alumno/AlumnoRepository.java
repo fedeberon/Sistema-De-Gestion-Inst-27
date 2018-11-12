@@ -41,6 +41,13 @@ public class AlumnoRepository {
         return (Alumno) query.uniqueResult();
     }
 
-
+    public Alumno delete(Alumno id){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.delete(id);
+        session.getTransaction().commit();
+        session.close();
+        return id;
+    }
 
 }

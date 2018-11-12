@@ -1,6 +1,7 @@
 package com.instituto27.controller.alumnos;
 
 import com.instituto27.domain.Alumno;
+import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
 import com.instituto27.service.alumno.AlumnoService;
 import javafx.collections.FXCollections;
@@ -64,6 +65,14 @@ public class AlumnoController  implements Initializable {
         Node [] nodes = new  Node[2];
         nodes[1] = fxmlLoader.load();
         pnl_scroll.getChildren().add(nodes[1]);
+    }
+
+    //Elimina todos los registros de la tabla y la base de datos
+
+    public void borrarAlumno(ActionEvent actionEvent) {
+        Alumno alumno = tablaAlumnos.getSelectionModel().getSelectedItem();
+        tablaAlumnos.getItems().remove(alumno);
+        alumnoService.delete(alumno);
     }
 
     @FXML
