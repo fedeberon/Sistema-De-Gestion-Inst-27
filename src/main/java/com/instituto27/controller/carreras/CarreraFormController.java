@@ -35,10 +35,10 @@ public class CarreraFormController implements Initializable {
     public CarreraService carreraService;
     @Autowired
     public CarreraMenuController carreraMenuController;
+
     public ObservableList<String> getList() {
         return list;
     }
-
     public void setList(ObservableList<String> list) {
         this.list = list;
     }

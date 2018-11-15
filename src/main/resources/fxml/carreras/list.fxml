@@ -40,9 +40,9 @@
             <TableView fx:id="listCarreras" layoutX="41.0" layoutY="102.0" prefHeight="179.0" prefWidth="778.0">
                <columns>
                   <!--Primera Columna-->
-                  <TableColumn fx:id="colNom" prefWidth="313.0" text="Nombre" />
+                  <TableColumn fx:id="colNom" prefWidth="594.0" text="Nombre" />
                   <!--Segunda Columna"-->
-                  <TableColumn fx:id="colTur" minWidth="0.0" prefWidth="142.0" text="Turno" />
+                  <TableColumn fx:id="colTur" minWidth="0.0" prefWidth="183.0" text="Turno" />
                </columns>
             </TableView>
             <!--Boton que al presionarlo despliega "/fxml/carreras/create.fxml"-->

@@ -23,8 +23,8 @@ public class Carrera {
     @Column(name = "CAR_TURNO")
     private String turno;
 
-    @OneToMany(mappedBy = "carrera")
-    private List<Materia> materias;
+    /*@OneToMany(mappedBy = "carrera")
+    private List<Materia> materias;*/
 
     public String getTurno() {
         return turno;
@@ -51,14 +51,14 @@ public class Carrera {
     }
 
 
-    public List<Materia> getMaterias() {
+    /*public List<Materia> getMaterias() {
         return materias;
     }
 
     public void setMaterias(List<Materia> materias) {
         this.materias = materias;
 
-    }
+    }*/
 
     @Override
     public String toString() {
