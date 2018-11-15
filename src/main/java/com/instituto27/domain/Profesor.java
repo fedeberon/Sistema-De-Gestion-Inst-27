@@ -76,4 +76,9 @@ public class Profesor {
 
     public void setNacimiento(LocalDate nacimiento) {this.nacimiento = nacimiento;}
 
+
+    @Override
+    public String toString() {
+        return nombre +" "+ apellido ;
+    }
 }

@@ -56,4 +56,5 @@ public class Materia {
     public void setCarrera(Carrera carrera) {
         this.carrera = carrera;
     }
+
 }
