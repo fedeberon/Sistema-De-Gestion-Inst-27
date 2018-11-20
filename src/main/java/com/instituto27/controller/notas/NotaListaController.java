@@ -1,9 +1,6 @@
 package com.instituto27.controller.notas;
 
-import com.instituto27.domain.Alumno;
-import com.instituto27.domain.Materia;
 import com.instituto27.domain.Nota;
-import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
 import com.instituto27.service.nota.NotaService;
 import javafx.collections.FXCollections;
@@ -20,15 +17,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
-
+@Component
 public class NotaListaController {
-
-    @FXML
-    public Button btnCrearNota;
 
     @FXML
     public Button btnEliminarNota;
@@ -66,7 +61,7 @@ public class NotaListaController {
         colCarrera.setCellValueFactory(new PropertyValueFactory<Nota, String>("carrera"));
         colMateria.setCellValueFactory(new PropertyValueFactory<Nota, String>("materia"));
         colAlumno.setCellValueFactory(new PropertyValueFactory<Nota, String>("alumno"));
-        colNota.setCellValueFactory(new PropertyValueFactory<Nota, Integer>("nota"));
+        colNota.setCellValueFactory(new PropertyValueFactory<Nota, String>("nota"));
         tablaNotas.setItems(obtenerNotas());
     }
 

@@ -58,7 +58,7 @@ public class NotaController implements Initializable {
     public Button btnGuardar;
 
     @Autowired
-    public NotaService notaService ;
+    private NotaService notaService ;
 
     @Autowired
     private CarreraService carreraService;
