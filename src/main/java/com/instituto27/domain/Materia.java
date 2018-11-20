@@ -57,4 +57,9 @@ public class Materia {
         this.carrera = carrera;
     }
 
+    @Override
+    public String toString() {
+        return nombre ;
+    }
+
 }

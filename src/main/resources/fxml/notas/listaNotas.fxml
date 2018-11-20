@@ -35,20 +35,17 @@
 
             <Separator layoutX="41.0" layoutY="75.0" prefHeight="0.0" prefWidth="817.0" />
 
-            <ComboBox layoutX="73.0" layoutY="107.0" prefWidth="150.0" promptText="Carrera" />
-            <ComboBox layoutX="240.0" layoutY="107.0" prefWidth="150.0" promptText="Materia" />
-            <Button layoutX="406.0" layoutY="107.0" mnemonicParsing="false" text="Buscar" />
-            <Button fx:id="btnCrearNota" layoutX="744.0" layoutY="107.0" mnemonicParsing="false" onAction="#crearNota" text="Cargar nota" />
+            <Button onAction="#crearNota" layoutX="73.0" layoutY="107.0" prefWidth="150.0" mnemonicParsing="false" text="Cargar nota" />
+            <Button fx:id="btnEliminarNota" layoutX="250.0" layoutY="107.0" prefWidth="150.0" mnemonicParsing="false" text="Eliminar nota" />
 
-            <TableView layoutX="73.0" layoutY="190.0" prefHeight="278.0" prefWidth="750.0">
-              <columns>
-                 <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
-                 <TableColumn fx:id="colCarrera" prefWidth="200.0" text="Carrera" />
-                 <TableColumn fx:id="colMateria" prefWidth="200.0" text="Materia" />
-                 <TableColumn fx:id="colNombre" prefWidth="100.0" text="Nombre" />
-                 <TableColumn fx:id="colApellido" prefWidth="100.0" text="Apellido" />
-                 <TableColumn fx:id="colNota" prefWidth="75.0" text="Nota" />
-              </columns>
+            <TableView fx:id="tablaNotas" layoutX="73.0" layoutY="190.0" prefHeight="278.0" prefWidth="750.0">
+               <columns>
+                  <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="colCarrera" prefWidth="200.0" text="Carrera" />
+                  <TableColumn fx:id="colMateria" prefWidth="200.0" text="Materia" />
+                  <TableColumn fx:id="colAlumno" prefWidth="200.0" text="Nombre" />
+                  <TableColumn fx:id="colNota" prefWidth="75.0" text="Nota" />
+               </columns>
             </TableView>
 
          </children>
