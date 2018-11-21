@@ -14,10 +14,6 @@ public class Nota {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "NOTA_CAR_ID")
-    private Carrera carrera;
-
-    @ManyToOne
     @JoinColumn(name = "NOTA_MAT_ID")
     private Materia materia;
 
@@ -34,14 +30,6 @@ public class Nota {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Carrera getCarrera() {
-        return carrera;
-    }
-
-    public void setCarrera(Carrera carrera) {
-        this.carrera = carrera;
     }
 
     public Materia getMateria() {

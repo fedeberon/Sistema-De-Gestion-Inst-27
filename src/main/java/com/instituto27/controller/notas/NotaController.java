@@ -61,38 +61,10 @@ public class NotaController implements Initializable {
     private NotaService notaService ;
 
     @Autowired
-    private CarreraService carreraService;
-
-    @Autowired
     private MateriaService materiaService;
 
     @Autowired
     private AlumnoService alumnoService;
-
-    /* TRAER LA LISTA DE CARRERAS */
-    public void cargarComboDeCarreras() {
-        ObservableList<Carrera> enseignantList = FXCollections.observableArrayList();
-        List<Carrera> carreras = carreraService.findAll();
-        for (Carrera ent : carreras) {
-            enseignantList.add(ent);
-        }
-
-        if(enseignantList.size() != 0){
-            cmbCarrera.setItems(enseignantList);
-        }
-    }
-
-    /* IR A LA INTERFAZ DEL MÓDULO CARRERA */
-    public void crearCarrera(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/carreras/create.fxml"));
-        fxmlLoader.setControllerFactory(Main.springContext::getBean);
-        Stage s = Main.getPrimaryStage();
-        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
-        pnl_scroll.getChildren().clear();
-        Node [] nodes = new  Node[2];
-        nodes[1] = fxmlLoader.load();
-        pnl_scroll.getChildren().add(nodes[1]);
-    }
 
     /* TRAER LA LISTA DE MATERIAS */
     public void cargarComboDeMaterias() {
@@ -148,7 +120,6 @@ public class NotaController implements Initializable {
     public void guardar(ActionEvent actionEvent) throws IOException {
         Nota nota = new Nota();
         nota.setNota(campoNota.getText());
-        nota.setCarrera(cmbCarrera.getValue());
         nota.setMateria(cmbMateria.getValue());
         nota.setAlumno(cmbAlumno.getValue());
 
@@ -168,7 +139,6 @@ public class NotaController implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        this.cargarComboDeCarreras();
         this.cargarComboDeAlumnos();
         this.cargarComboDeMaterias();
     }

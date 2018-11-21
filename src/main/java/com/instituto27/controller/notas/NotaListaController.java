@@ -32,9 +32,6 @@ public class NotaListaController {
     public TableColumn colID;
 
     @FXML
-    public TableColumn colCarrera;
-
-    @FXML
     public TableColumn colMateria;
 
     @FXML
@@ -54,8 +51,7 @@ public class NotaListaController {
 
 
     public void initialize(){
-        colID.setCellValueFactory(new PropertyValueFactory<Nota, Integer>("carrera"));
-        colCarrera.setCellValueFactory(new PropertyValueFactory<Nota, String>("carrera"));
+        colID.setCellValueFactory(new PropertyValueFactory<Nota, Integer>("id"));
         colMateria.setCellValueFactory(new PropertyValueFactory<Nota, String>("materia"));
         colAlumno.setCellValueFactory(new PropertyValueFactory<Nota, String>("alumno"));
         colNota.setCellValueFactory(new PropertyValueFactory<Nota, String>("nota"));
