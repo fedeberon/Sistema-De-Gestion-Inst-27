@@ -72,8 +72,8 @@ public class NotaController implements Initializable {
     /* TRAER LA LISTA DE CARRERAS */
     public void cargarComboDeCarreras() {
         ObservableList<Carrera> enseignantList = FXCollections.observableArrayList();
-        List<Carrera> carrreras = carreraService.findAll();
-        for (Carrera ent : carrreras) {
+        List<Carrera> carreras = carreraService.findAll();
+        for (Carrera ent : carreras) {
             enseignantList.add(ent);
         }
 
@@ -84,13 +84,14 @@ public class NotaController implements Initializable {
 
     /* IR A LA INTERFAZ DEL MÓDULO CARRERA */
     public void crearCarrera(ActionEvent actionEvent) throws IOException {
-        Node[] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/carreras/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/carreras/create.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         Stage s = Main.getPrimaryStage();
         VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
-        pnl_scroll.getChildren().add(nodes[v]);
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
     /* TRAER LA LISTA DE MATERIAS */
@@ -108,13 +109,14 @@ public class NotaController implements Initializable {
 
     /* IR A LA INTERFAZ DEL MÓDULO MATERIA */
     public void crearMateria(ActionEvent actionEvent) throws IOException {
-        Node[] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/materias/Materias.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/materias/Materias.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         Stage s = Main.getPrimaryStage();
         VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
-        pnl_scroll.getChildren().add(nodes[v]);
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
     /* TRAER LA LISTA DE ALUMNO */
@@ -132,13 +134,14 @@ public class NotaController implements Initializable {
 
     /* IR A LA INTERFAZ DEL MÓDULO ALUMNO */
     public void crearAlumno(ActionEvent actionEvent) throws IOException {
-        Node[] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/alumno/create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/alumno/create.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         Stage s = Main.getPrimaryStage();
         VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
-        pnl_scroll.getChildren().add(nodes[v]);
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
     /* GUARDAR EN LA TABLA NOTAS */

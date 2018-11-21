@@ -21,7 +21,4 @@ public class NotaService {
         return dao.findAll();
     }
 
-    public  Nota delete(Nota id){
-        return dao.delete(id);
-    }
 }

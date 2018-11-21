@@ -29,13 +29,4 @@ public class NotaRepository {
         return query.list();
     }
 
-    public Nota delete(Nota id){
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.delete(id);
-        session.getTransaction().commit();
-        session.close();
-        return id;
-    }
-
 }
