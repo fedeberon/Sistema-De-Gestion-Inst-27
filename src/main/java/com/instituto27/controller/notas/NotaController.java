@@ -4,10 +4,8 @@ package com.instituto27.controller.notas;
 import com.instituto27.domain.Alumno;
 import com.instituto27.domain.Materia;
 import com.instituto27.domain.Nota;
-import com.instituto27.domain.carrera.Carrera;
 import com.instituto27.main.Main;
 import com.instituto27.service.alumno.AlumnoService;
-import com.instituto27.service.carreras.CarreraService;
 import com.instituto27.service.materia.MateriaService;
 import com.instituto27.service.nota.NotaService;
 import javafx.collections.FXCollections;
@@ -32,12 +30,6 @@ import java.util.ResourceBundle;
 
 @Component
 public class NotaController implements Initializable {
-
-    @FXML
-    public ComboBox<Carrera> cmbCarrera;
-
-    @FXML
-    public Button btnCrearCarrera;
 
     @FXML
     public ComboBox<Materia> cmbMateria;
