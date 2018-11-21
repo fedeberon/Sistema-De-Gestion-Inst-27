@@ -26,9 +26,6 @@ import java.util.List;
 public class NotaListaController {
 
     @FXML
-    public Button btnEliminarNota;
-
-    @FXML
     public TableView tablaNotas;
 
     @FXML
@@ -55,7 +52,7 @@ public class NotaListaController {
     @Autowired
     public SessionFactory sessionFactory;
 
-    /*
+
     public void initialize(){
         colID.setCellValueFactory(new PropertyValueFactory<Nota, Integer>("carrera"));
         colCarrera.setCellValueFactory(new PropertyValueFactory<Nota, String>("carrera"));
@@ -73,17 +70,18 @@ public class NotaListaController {
         }
 
         return enseignantList;
-    }*/
+    }
 
     /*IR A LA INTERFAZ DE CARGAR NOTA */
     public void crearNota(ActionEvent actionEvent) throws IOException {
-        Node[] nodes = new  Node[2];
-        Integer v = 1;
-        nodes[v] = FXMLLoader.load(getClass().getResource("/fxml/notas/Notas.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/notas/Notas.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
         Stage s = Main.getPrimaryStage();
         VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
         pnl_scroll.getChildren().clear();
-        pnl_scroll.getChildren().add(nodes[v]);
+        Node [] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
     }
 
 }
