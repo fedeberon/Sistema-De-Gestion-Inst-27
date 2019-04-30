@@ -29,9 +29,9 @@
             </Label>
 
             <PasswordField fx:id="password" layoutX="53.0" layoutY="121.0" prefHeight="25.0" onAction="#init" prefWidth="207.0" promptText="ingrese password" />
-            <Button layoutX="79.0" layoutY="172.0" mnemonicParsing="false" onAction="#login" fx:id="btnIngresar" prefHeight="47.0" prefWidth="163.0">
+            <Button layoutX="79.0" layoutY="172.0" mnemonicParsing="false" onAction="#login" fx:id="btnIngresar" prefHeight="47.0" prefWidth="163.0" text="Ingresar">
                <font>
-                  <Font name="Arial" size="12.0" />
+                  <Font name="Arial" size="20.0" />
                </font>
             </Button>
 

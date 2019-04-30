@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.alumnos.AlumnoController">
+<AnchorPane prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.alumnos.AlumnoController">
 
    <children>
 
@@ -44,7 +44,7 @@
                   <TableColumn fx:id="itemEmailCol" prefWidth="125.0" text="Email" />
               </columns>
             </TableView>
-             <Button layoutX="319.0" layoutY="291.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#showAtras" prefHeight="25.0" prefWidth="116.0" text="Atras" />
+             <Button layoutX="319.0" layoutY="291.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#showAtras" prefHeight="31.0" prefWidth="116.0" text="Atras" />
              <Button layoutX="448.0" layoutY="291.0" mnemonicParsing="false" onAction="#borrarAlumno" prefHeight="25.0" prefWidth="130.0" text="Borrar Alumno" />
          </children>
 

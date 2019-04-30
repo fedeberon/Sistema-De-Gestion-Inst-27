@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -15,87 +7,65 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="399.0" prefWidth="850.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.profesores.ProfesorController">
+<AnchorPane prefHeight="993.0" prefWidth="850.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.profesores.ProfesorController">
     <children>
-        <TabPane fx:id="tabPane" prefHeight="399.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="tabPane" prefHeight="993.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab fx:id="loadTab" text="Cargar profesores">
-                    <content>
-                        <Pane prefHeight="338.0" prefWidth="248.0" style="-fx-background-color: #fff;">
-                            <children>
+               <content>
+                  <Pane prefHeight="361.0" prefWidth="830.0">
+                     <children>
                                 <!--Logo del panel"-->
-                                <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="34.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="57.0" fitWidth="78.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../../images/logoInstituto.png" />
                                     </image>
                                 </ImageView>
-
-                                <Label layoutX="111.0" layoutY="33.0" text="Carga de Profesores" textFill="#3a1c9d">
+            
+                                                                                                                                                              <Label layoutX="57.0" layoutY="1.0" text="Carga de Profesores" textFill="#3a1c9d">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font>
                                 </Label>
-
-                                <FlowPane fx:id="bla" layoutX="27.0" layoutY="82.0" prefHeight="174.0" prefWidth="815.0">
-                                    <children>
-                                        <Label prefHeight="21.0" prefWidth="63.0" text="Nombre" />
-                                        <TextField fx:id="campoNombre" prefHeight="25.0" prefWidth="113.0" />
-                                        <Label fx:id="errorNombre" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="18.0" text="*" textFill="RED" />
-                                        <Label prefHeight="21.0" prefWidth="55.0" text="Apellido" />
-                                        <TextField fx:id="campoApellido" prefHeight="25.0" prefWidth="123.0" />
-                                        <Label fx:id="errorApellido" alignment="TOP_LEFT" lineSpacing="50" prefHeight="26.0" prefWidth="16.0" text="*" textFill="RED" />
-                                        <Label prefHeight="21.0" prefWidth="65.0" text="Direccion" />
-                                        <TextField fx:id="campoDireccion" prefHeight="19.0" prefWidth="204.0">
-                                            <FlowPane.margin>
-                                                <Insets right="15.0" />
-                                            </FlowPane.margin>
+                                <Button fx:id="botonLimpiar" layoutX="178.0" layoutY="909.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="31.0" prefWidth="146.0" text="Limpiar campos" />
+                                <Button fx:id="botonGuardar" layoutX="20.0" layoutY="909.0" mnemonicParsing="false" onAction="#guardar" prefHeight="31.0" prefWidth="146.0" text="Guardar" />
+                                  <Label layoutX="6.0" layoutY="69.0" prefHeight="21.0" prefWidth="55.0" text="Nombre" />
+                                  <TextField fx:id="campoNombre" layoutX="62.0" layoutY="64.0" prefHeight="25.0" prefWidth="143.0" />
+                                  <Label fx:id="errorNombre" alignment="TOP_LEFT" layoutX="207.0" layoutY="56.0" prefHeight="30.0" prefWidth="5.0" text="*" textFill="RED" />
+                                  <Label layoutX="226.0" layoutY="70.0" prefHeight="21.0" prefWidth="65.0" text="Apellido" />
+                                  <TextField fx:id="campoApellido" layoutX="299.0" layoutY="64.0" prefHeight="25.0" prefWidth="143.0" />
+                                  <Label fx:id="errorApellido" alignment="TOP_LEFT" layoutX="445.0" layoutY="59.0" lineSpacing="50" prefHeight="10.0" prefWidth="5.0" text="*" textFill="RED" />
+                                  <Label layoutX="449.0" layoutY="70.0" prefHeight="21.0" prefWidth="69.0" text="Direccion" />
+                                  <TextField fx:id="campoDireccion" layoutX="523.0" layoutY="64.0" prefHeight="19.0" prefWidth="158.0">
                                         </TextField>
-                                        <Label graphicTextGap="0.0" prefHeight="32.0" prefWidth="58.0" text="Numero" />
-                                        <TextField fx:id="campoNumero" prefHeight="0.0" prefWidth="64.0">
-                                            <FlowPane.margin>
-                                                <Insets right="15.0" />
-                                            </FlowPane.margin>
-                                        </TextField>
-                                        <Label graphicTextGap="0.0" prefHeight="21.0" prefWidth="55.0" text="Celular" />
-                                        <TextField fx:id="campoCelular" prefHeight="0.0" prefWidth="212.0" />
-                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="98.0" text="Telefono fijo" />
-                                        <TextField fx:id="campoFijo" prefHeight="0.0" prefWidth="230.0">
-                                            <FlowPane.margin>
-                                                <Insets right="175.0" />
-                                            </FlowPane.margin>
-                                        </TextField>
-                                        <Label prefHeight="21.0" prefWidth="46.0" text="Cuil" />
-                                        <TextField fx:id="campoCuilA" prefHeight="25.0" prefWidth="42.0" />
-                                        <TextField fx:id="campoCuilB" prefHeight="0.0" prefWidth="101.0" />
-                                        <TextField fx:id="campoCuilC" prefHeight="25.0" prefWidth="26.0">
-                                            <FlowPane.margin>
-                                                <Insets right="15.0" />
-                                            </FlowPane.margin>
-                                        </TextField>
-                                        <Label prefHeight="31.0" prefWidth="137.0" text="Fecha de nacimiento" />
-                                        <DatePicker fx:id="campoFecha" layoutX="696.0" layoutY="102.0" prefHeight="0.0" prefWidth="166.0" />
-
-                                        <Label fx:id="mensajeError" prefHeight="27.0" prefWidth="764.0" text="*: Campo obligatorio" textFill="RED" />
-                                    </children>
-                                </FlowPane>
-                                <Button fx:id="botonGuardar" layoutX="27.0" layoutY="271.0" mnemonicParsing="false" onAction="#guardar" prefHeight="31.0" prefWidth="146.0" text="Guardar" />
-                                <Button fx:id="botonLimpiar" layoutX="179.0" layoutY="271.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="31.0" prefWidth="146.0" text="Limpiar campos" />
-                            </children>
-
-                            <effect>
-                                <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
-                            </effect>
-                        </Pane>
-                    </content>
+                                  <Label graphicTextGap="0.0" layoutX="689.0" layoutY="65.0" prefHeight="32.0" prefWidth="63.0" text="Numero" />
+                                  <TextField fx:id="campoNumero" layoutX="752.0" layoutY="65.0" prefHeight="0.0" prefWidth="64.0" />
+                                  <Label graphicTextGap="0.0" layoutX="6.0" layoutY="115.0" prefHeight="21.0" prefWidth="53.0" text="Celular" />
+                                  <TextField fx:id="campoCelular" layoutX="62.0" layoutY="110.0" prefHeight="0.0" prefWidth="143.0" />
+                                  <Label alignment="CENTER" layoutX="206.0" layoutY="110.0" prefHeight="30.0" prefWidth="90.0" text="Telefono fijo" />
+                                  <TextField fx:id="campoFijo" layoutX="299.0" layoutY="110.0" prefHeight="0.0" prefWidth="143.0" />
+                                  <Label layoutX="448.0" layoutY="115.0" prefHeight="21.0" prefWidth="71.0" text="    Cuil" />
+                                  <TextField fx:id="campoCuilA" layoutX="523.0" layoutY="110.0" prefHeight="25.0" prefWidth="40.0" />
+                                  <TextField fx:id="campoCuilB" layoutX="563.0" layoutY="110.0" prefHeight="0.0" prefWidth="85.0" />
+                                  <TextField fx:id="campoCuilC" layoutX="648.0" layoutY="110.0" prefHeight="25.0" prefWidth="33.0" />
+                                  <Label layoutX="14.0" layoutY="151.0" prefHeight="32.0" prefWidth="44.0" text="Fecha " />
+                                  <DatePicker fx:id="campoFecha" layoutX="602.0" layoutY="725.0" prefHeight="31.0" prefWidth="145.0" />
+            
+                                                                                                                                                                            <Label fx:id="mensajeError" layoutX="20.0" layoutY="874.0" prefHeight="10.0" prefWidth="764.0" text="*: Campo obligatorio" textFill="RED" />
+                        <Label layoutX="-1.0" layoutY="182.0" text="de nacimiento" />
+                     </children>
+                  </Pane>
+               </content>
                 </Tab>
 
                 <Tab fx:id="listTab" text="Lista de profesores">
@@ -135,7 +105,7 @@
                     </content>
                 </Tab>
 
-                <Tab fx:id="assignTab"  text="Asignar materia">
+                <Tab fx:id="assignTab" text="Asignar materia">
                     <content>
                         <Pane prefHeight="338.0" prefWidth="248.0" style="-fx-background-color: #fff;">
                             <children>

@@ -14,191 +14,176 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0"  style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.HomeController">
+<AnchorPane fx:id="menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1277.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.HomeController">
     <children>
-        <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background"
-              stylesheets="@/css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="0.0">
+        <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@/css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label layoutX="224.0" layoutY="47.0" text="KeepToo" textFill="WHITE">
                     <font>
-                        <Font size="36.0"/>
+                        <Font size="36.0" />
                     </font>
                 </Label>
                 <Label layoutX="227.0" layoutY="100.0" text="Since 2015" textFill="WHITE">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                 </Label>
-                <JFXButton layoutX="1041.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0"
-                           prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;"
-                           text="EDIT PROFILE" textFill="WHITE">
+                <JFXButton layoutX="1041.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="EDIT PROFILE" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="12.0"/>
+                        <Font name="System Bold" size="12.0" />
                     </font>
                 </JFXButton>
             </children>
         </Pane>
 
-        <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;"
-              AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+        <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
             <children>
 
                 <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <padding>
-                        <Insets left="40.0"/>
+                        <Insets left="40.0" />
                     </padding>
                     <VBox.margin>
-                        <Insets top="60.0"/>
+                        <Insets top="60.0" />
                     </VBox.margin>
                 </Label>
 
                 <!--Primer Boton menu lateral-->
-                <JFXButton alignment="BASELINE_LEFT" onAction="#btnAlumnos" graphicTextGap="10.0" prefHeight="43.0"
-                           prefWidth="252.0" ripplerFill="#bfadf8" text="Alumnos" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnAlumnos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Alumnos" textFill="#5b5858">
                     <VBox.margin>
-                        <Insets/>
+                        <Insets />
                     </VBox.margin>
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/projects.png"/>
+                                <Image url="@/images/projects.png" />
                             </image>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
                 <!--Segundo Boton menu lateral-->
-                <JFXButton alignment="BASELINE_LEFT" onAction="#btnProfesores" graphicTextGap="10.0" prefHeight="43.0"
-                           prefWidth="252.0" ripplerFill="#bfadf8" text="Profesores" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnProfesores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profesores" textFill="#5b5858">
                     <VBox.margin>
-                        <Insets/>
+                        <Insets />
                     </VBox.margin>
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/reliabilty.png"/>
+                                <Image url="@/images/reliabilty.png" />
                             </image>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
                 <!--Tercer Boton menu lateral-->
-                <JFXButton alignment="BASELINE_LEFT" onAction="#btnCarreras" graphicTextGap="10.0" prefHeight="43.0"
-                           prefWidth="252.0" ripplerFill="#bfadf8" text="Carreras" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnCarreras" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Carreras" textFill="#5b5858">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/projections.png"/>
+                                <Image url="@/images/projections.png" />
                             </image>
                             <viewport>
-                                <Rectangle2D/>
+                                <Rectangle2D />
                             </viewport>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
                 <Label prefHeight="30.0" prefWidth="252.0" text="ENTERPRISE" textFill="#171717">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <padding>
-                        <Insets left="40.0"/>
+                        <Insets left="40.0" />
                     </padding>
                 </Label>
 
-                <JFXButton alignment="BASELINE_LEFT" onAction="#btnReporte" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnReporte" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte" textFill="#5b5858">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/icons8_Workflow_64px.png"/>
+                                <Image url="@/images/icons8_Workflow_64px.png" />
                             </image>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
-                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0"
-                           ripplerFill="#bfadf8" text="Materias" onAction="#btnMaterias" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnMaterias" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Materias" textFill="#5b5858">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/icons8_US_Dollar_64px.png"/>
+                                <Image url="@/images/icons8_US_Dollar_64px.png" />
                             </image>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
-                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0"
-                           ripplerFill="#bfadf8" text="Notas" onAction="#btnNotas" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnNotas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Notas" textFill="#5b5858">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/agencies.png"/>
+                                <Image url="@/images/agencies.png" />
                             </image>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
-                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0"
-                           ripplerFill="#bfadf8" text="Inscripcio" onAction="#btnInscripcion" textFill="#5b5858">
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnInscripcion" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Inscripcion" textFill="#5b5858">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/images/icons8_Share_64px.png"/>
+                                <Image url="@/images/icons8_Share_64px.png" />
                             </image>
                             <viewport>
-                                <Rectangle2D/>
+                                <Rectangle2D />
                             </viewport>
                         </ImageView>
                     </graphic>
                     <padding>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </padding>
                 </JFXButton>
 
@@ -207,23 +192,20 @@
 
         <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
             <children>
-                <ImageView fitHeight="120.0" fitWidth="139.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fitHeight="120.0" fitWidth="139.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@/images/logo.png"/>
+                        <Image url="@/images/logo.png" />
                     </image>
                 </ImageView>
             </children>
             <effect>
-                <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0"/>
+                <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
             </effect>
         </Pane>
 
-        <ScrollPane fx:id="contenido" layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0"
-                    style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0"
-                    AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
+        <ScrollPane fx:id="contenido" layoutX="251.0" layoutY="182.0" prefHeight="406.0" prefWidth="810.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="182.0">
             <content>
-                <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;"/>
+                <VBox fx:id="pnl_scroll" prefHeight="404.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;" />
             </content>
         </ScrollPane>
 
@@ -236,30 +218,28 @@
                 <!--Solapa 1-->
                 <Label fx:id="lbl_currentprojects" prefHeight="30.0" prefWidth="207.0" text="Lista" textFill="#171717">
                     <font>
-                        <Font name="System Bold" size="13.0"/>
+                        <Font name="System Bold" size="13.0" />
                     </font>
                     <padding>
-                        <Insets left="40.0"/>
+                        <Insets left="40.0" />
                     </padding>
                 </Label>
                 <!--Solapa 2-->
-                <Label fx:id="lbl_pending" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0"
-                       text="Crear" textFill="#171717">
+                <Label fx:id="lbl_pending" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Crear" textFill="#171717">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <padding>
-                        <Insets left="40.0"/>
+                        <Insets left="40.0" />
                     </padding>
                 </Label>
                 <!--Solapa 3-->
-                <Label fx:id="lbl_completed" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0"
-                       text="Completed Projects(2)" textFill="#171717">
+                <Label fx:id="lbl_completed" onMouseClicked="#handleButtonAction" prefHeight="30.0" prefWidth="207.0" text="Completed Projects(2)" textFill="#171717">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <padding>
-                        <Insets left="40.0"/>
+                        <Insets left="40.0" />
                     </padding>
                 </Label>
             </children>

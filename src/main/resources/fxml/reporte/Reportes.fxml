@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.reporte.ReporteController">
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.instituto27.controller.reporte.ReporteController">
 
     <children>
 
@@ -27,7 +27,7 @@
                 </ImageView>
 
                 <!--Label titulo principal-->
-                <Label layoutX="111.0" layoutY="33.0" text="Reportes" textFill="#3a1c9d">
+                <Label layoutX="113.0" layoutY="33.0" text="Reportes" textFill="#3a1c9d">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -35,8 +35,8 @@
 
                 <!--Separador del titulo con el resto del panel-->
                 <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
-            <Button onAction="#btnAlumnos" layoutX="63.0" layoutY="126.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="ALUMNOS" />
-            <Button onAction="#btnProfesores" layoutX="63.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="PROFESORES" />
+            <Button layoutX="63.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnAlumnos" prefHeight="25.0" prefWidth="116.0" text="ALUMNOS" />
+            <Button layoutX="63.0" layoutY="193.0" mnemonicParsing="false" onAction="#btnProfesores" prefHeight="25.0" prefWidth="116.0" text="PROFESORES" />
             <AmbientLight color="CHARTREUSE" layoutX="253.0" layoutY="194.0" lightOn="true" />
 
 
