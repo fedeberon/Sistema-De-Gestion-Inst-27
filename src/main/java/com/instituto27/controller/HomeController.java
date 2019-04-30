@@ -25,6 +25,7 @@ import java.util.ResourceBundle;
  *
  * @author oXCToo
  */
+@SuppressWarnings("Duplicates")
 public class HomeController implements Initializable {
     @FXML
     private Label label;
@@ -120,6 +121,16 @@ public class HomeController implements Initializable {
         pnl_scroll.getChildren().add(nodes[1]);
     }
 
+    public void btnEditProfile(ActionEvent actionEvent) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/usuario/EditarUsuario.fxml"));
+        fxmlLoader.setControllerFactory(Main.springContext::getBean);
+        Stage s = Main.getPrimaryStage();
+        VBox pnl_scroll = (VBox) s.getScene().lookup("#pnl_scroll");
+        pnl_scroll.getChildren().clear();
+        Node[] nodes = new  Node[2];
+        nodes[1] = fxmlLoader.load();
+        pnl_scroll.getChildren().add(nodes[1]);
+    }
 
 
 

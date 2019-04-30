@@ -33,7 +33,7 @@
                 </Label>
                 <JFXButton layoutX="1041.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0"
                            prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;"
-                           text="EDIT PROFILE" textFill="WHITE">
+                           text="EDIT PROFILE" textFill="WHITE" onAction="#btnEditProfile">
                     <font>
                         <Font name="System Bold" size="12.0"/>
                     </font>

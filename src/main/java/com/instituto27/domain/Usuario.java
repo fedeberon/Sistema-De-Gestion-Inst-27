@@ -1,9 +1,7 @@
 package com.instituto27.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.function.Function;
 
 /**
  * Created by ISFDyT Nº 27 on 07/06/2018.
@@ -11,7 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+@DiscriminatorColumn
+public class Usuario extends Persona {
 
     @Id
     @Column(name = "USERNAME")
@@ -20,11 +19,11 @@ public class Usuario {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "USU_NOMBRE")
     private String nombre;
 
-    @Column(name = "USU_APELLIDO")
     private String apellido;
+
+    private String DNI;
 
     public String getUsername() {
         return username;
@@ -42,6 +41,7 @@ public class Usuario {
         this.password = password;
     }
 
+    @Column(name = "NOMBRE")
     public String getNombre() {
         return nombre;
     }
@@ -50,11 +50,26 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    @Column(name = "APELLIDO")
     public String getApellido() {
         return apellido;
     }
 
+    @Column(name = "DNI")
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    @Override
+    public <T> T evaluar(Function<Usuario, ? extends T> usuario, Function<Profesor, ? extends T> profesor, Function<Alumno, ? extends T> alumno, Function<Administrativo, ? extends T> administrativo) {
+        return usuario.apply(this);
     }
 }
