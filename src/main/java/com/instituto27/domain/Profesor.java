@@ -54,13 +54,6 @@ public class Profesor extends Usuario{
     @Column(name = "PRO_TOMA_POSECION")
     private LocalDate tomaposecion;
 
-
-
-
-    public Integer getId(){return id;}
-
-    public void setId(Integer id){this.id = id;}
-
     @Column(name = "NOMBRE")
     public String getNombre() { return nombre;}
 
