@@ -40,6 +40,27 @@ public class Profesor {
     @Column(name = "PRO_NACIMIENTO")
     private LocalDate nacimiento;
 
+    @Column(name = "PRO_EMAIL")
+    private String email;
+
+    @Column(name = "PRO_TITULO")
+    private String titulo;
+
+    @Column(name = "PRO_NRO_REGISTRO")
+    private String nroregistro;
+
+    @Column(name = "PRO_TUTULO_OTORGADO")
+    private String titotorgado;
+
+    @Column(name = "PRO_ANTIGUEDAD")
+    private String antiguedad;
+
+    @Column(name = "PRO_TOMA_POSECION")
+    private LocalDate tomaposecion;
+
+
+
+
     public Integer getId(){return id;}
 
     public void setId(Integer id){this.id = id;}
@@ -75,6 +96,30 @@ public class Profesor {
     public LocalDate getNacimiento() { return nacimiento; }
 
     public void setNacimiento(LocalDate nacimiento) {this.nacimiento = nacimiento;}
+
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) { this.email = email; }
+
+    public String getTitulo() {return titulo;}
+
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+
+    public String getNroregistro() {return nroregistro;}
+
+    public void setNroregistro(String nroregistro) { this.nroregistro = nroregistro; }
+
+    public String getTitotorgado() {return titotorgado;}
+
+    public void setTitotorgado(String titotorgado) { this.titotorgado = titotorgado; }
+
+    public String getAntiguedad() {return antiguedad;}
+
+    public void setAntiguedad(String antiguedad) { this.antiguedad = antiguedad; }
+
+    public LocalDate getTomaposecion() { return tomaposecion; }
+
+    public void setTomaposecion(LocalDate tomaposecion) {this.tomaposecion = tomaposecion;}
 
 
     @Override

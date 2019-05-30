@@ -15,37 +15,37 @@ public class Verificador {
     que no haya numeros donde debe haber solo texto y vice versa)*/
 
     //==================================================================================================================
-    public boolean chequearEspacios (String text, boolean nullable){
+    public boolean chequearEspacios(String text, boolean nullable) {
         /*-En caso de que el string acepte espacios, verifica que no se comp1onga solo de ellos
           -El segundo parametro (nullable) establece si es aceptable que el string sea de valor nulo
         */
 
         int cantidadDeEspacios = 0;
-        for(int i = 0; i<text.length(); i++){
-            if (text.charAt(i) == ' '){
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == ' ') {
                 cantidadDeEspacios++;
             }
         }
 
-        if(cantidadDeEspacios != text.length()){
+        if (cantidadDeEspacios != text.length()) {
             return true;
-        }else{
-            return (cantidadDeEspacios == 0 ? nullable : false );
+        } else {
+            return (cantidadDeEspacios == 0 ? nullable : false);
         }
     }
 
-    public boolean chequearTexto(String text, boolean nullable){
+    public boolean chequearTexto(String text, boolean nullable) {
         /*Verifica que el contenido del campo sea1 texto puro (sin numeros ni simbolos)*/
-        for(Character i: text.toCharArray())
+        for (Character i : text.toCharArray())
             if (!Character.isLetter(i) && i != ' ') {
                 return false;
             }
         return chequearEspacios(text, nullable);
     }
 
-    public boolean chequearNumero(String text, boolean nullable){
+    public boolean chequearNumero(String text, boolean nullable) {
         /*Verifica que el contenido del campo sean numeros puros (sin letras ni simbolos)*/
-        for(Character i: text.toCharArray())
+        for (Character i : text.toCharArray())
             if (!Character.isDigit(i) && i != ' ') {
                 return false;
             }
@@ -57,22 +57,23 @@ public class Verificador {
           -Devuelve falso de ser un valor erroneo*/
 
         //Puesto que el CUIL no es un campo obligatorio, si no se introduce dato alguno no se detectara un error.
-        if(cuil[0].isEmpty() && cuil[1].isEmpty() && cuil[2].isEmpty() ){
-            return true;
+        if (cuil[0].isEmpty() && cuil[1].isEmpty() && cuil[2].isEmpty()) {
+            return false;
         }
 
         //Verificacion para evitar que uno de los tres campos que componene el CUIL esten vacios.
-        if((cuil[0].isEmpty() && cuil[1].isEmpty()) || (cuil[2].isEmpty() && cuil[1].isEmpty()) || (cuil[0].isEmpty() && cuil[2].isEmpty())){
+        if ((cuil[0].isEmpty() && cuil[1].isEmpty()) || (cuil[2].isEmpty() && cuil[1].isEmpty()) || (cuil[0].isEmpty() && cuil[2].isEmpty())) {
             return false;
         }
 
         //Verificacion parte por parte de cada campo que compone el CUIL, tanto de longitud, como de composicin (solo se aceptan numeros)
-        if(cuil[0].length()!=2 || !chequearNumero(cuil[0],false)){
+        if (cuil[0].length() != 2 || !chequearNumero(cuil[0], false)) {
             return false;
         }
-        if(cuil[1].length()!=8 || !chequearNumero(cuil[1],false)){
+        if (cuil[1].length() != 8 || !chequearNumero(cuil[1], false)) {
             return false;
         }
-        return !(cuil[2].length()!=1 || !chequearNumero(cuil[2],false));
+        return !(cuil[2].length() != 1 || !chequearNumero(cuil[2], false));
     }
+
 }

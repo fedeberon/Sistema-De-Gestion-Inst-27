@@ -25,7 +25,9 @@ public class ProfesorService {
     }
 
     public Profesor delete(Profesor id){
+
         return dao.delete(id);
+
     }
 
     public List<Profesor> findAll(){
