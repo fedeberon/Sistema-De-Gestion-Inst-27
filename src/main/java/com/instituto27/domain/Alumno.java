@@ -1,35 +1,21 @@
 package com.instituto27.domain;
 
-import javafx.collections.FXCollections;
-import javafx.fxml.Initializable;
-import javafx.scene.control.cell.PropertyValueFactory;
-
 import javax.persistence.*;
-import java.net.URL;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
+import java.util.function.Function;
 
 /**
  * Created by ISFDyT Nº 27 on 26/06/2018.
  */
 
 @Entity
-@Table(name = "alumnos")
-public class Alumno {
+@DiscriminatorValue("ALUMNO")
+public class Alumno extends Usuario {
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="ALU_ID")
-    private Integer id;
-
-    @Column(name = "ALU_NOMBRE")
     private String nombre;
 
-    @Column(name = "ALU_APELLIDO")
     private String apellido;
 
-    @Column(name = "ALU_DNI")
     private String DNI;
 
     @Column(name = "ALU_FECHA_DE_NACIMIENTO")
@@ -44,14 +30,7 @@ public class Alumno {
     @Column(name = "ALU_EMAIL")
     private String email;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
+    @Column(name = "NOMBRE")
     public String getNombre() {
         return nombre;
     }
@@ -60,6 +39,7 @@ public class Alumno {
         this.nombre = nombre;
     }
 
+    @Column(name = "APELLIDO")
     public String getApellido() {
         return apellido;
     }
@@ -68,6 +48,7 @@ public class Alumno {
         this.apellido = apellido;
     }
 
+    @Column(name = "DNI")
     public String getDNI() {
         return DNI;
     }
@@ -111,5 +92,10 @@ public class Alumno {
     @Override
     public String toString() {
         return nombre + " " + apellido;
+    }
+
+    @Override
+    public <T> T evaluar(Function<Usuario, ? extends T> usuario, Function<Profesor, ? extends T> profesor, Function<Alumno, ? extends T> alumno, Function<Administrativo, ? extends T> administrativo) {
+        return alumno.apply(this);
     }
 }

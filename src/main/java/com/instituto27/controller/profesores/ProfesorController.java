@@ -271,7 +271,7 @@ public class ProfesorController{
                 listTab.setDisable(false);
                 assignTab.setDisable(false);
                 tabPane.getSelectionModel().select(1);
-                profesor.setId(idDelModificado);
+//                profesor.setId(idDelModificado);
                 profesorService.update(profesor);
                 modificando = false;
             }else{
@@ -365,7 +365,7 @@ public class ProfesorController{
         listTab.setDisable(true);
         assignTab.setDisable(true);
         modificando = true;
-        idDelModificado = profesor.getId();
+//        idDelModificado = profesor.getId();
     }
 
     public ObservableList<Profesor> getProfesorEnseignant() {

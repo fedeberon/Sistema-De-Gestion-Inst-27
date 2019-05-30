@@ -1,5 +1,6 @@
 package com.instituto27.controller.login;
 
+import com.instituto27.domain.Persona;
 import com.instituto27.domain.Usuario;
 import com.instituto27.main.Main;
 import com.instituto27.service.usuario.UsuarioService;
@@ -14,13 +15,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.swing.plaf.basic.BasicComboBoxUI;
+import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.util.logging.Handler;
 
 /**
  * Created by ISFDyT Nº 27 on 29/05/2018.
@@ -38,6 +43,9 @@ public class LoginController {
     public Label mensajeValidacion;
 
     @FXML
+    public Button btnLogin;
+
+    @FXML
     public Button btnIngresar;
 
     @Autowired
@@ -49,6 +57,8 @@ public class LoginController {
     }
 
 
+
+
     public void login(ActionEvent actionEvent) throws IOException {
         boolean esUnUsuarioValido = usuarioService.validarUsuarioYPassword(username.getText(), password.getText());
         if (esUnUsuarioValido) {
@@ -58,9 +68,12 @@ public class LoginController {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
 
-            Usuario usuario = usuarioService.get(username.getText());
-            stage.setTitle("Usuario: " + usuario.getNombre() +  " " + usuario.getApellido());
+            Persona persona = usuarioService.get(username.getText());
 
+            // evaluar usuario
+            String quienSoy = persona.evaluar(usuario -> "Usuario", profesor -> "Profesor", alumno -> "Alumno",administrativo -> "Administrativo");
+
+            stage.setTitle(persona.getNombre() + " "  + persona.getApellido() + " - " + quienSoy);
 
             stage.setScene(scene);
             stage.show();

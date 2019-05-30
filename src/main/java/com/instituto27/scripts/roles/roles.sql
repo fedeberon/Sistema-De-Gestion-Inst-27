@@ -1,0 +1,1 @@
+CREATE TABLE roles ( ID int, USERNAME varchar(50), ALU_ID int , PRO_ID int, ADM_ID int);

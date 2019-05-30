@@ -18,8 +18,6 @@ public class UsuarioRepository{
     @Autowired
     private SessionFactory sessionFactory;
 
-
-
     public boolean validarUsuarioYPassword(String username, String password){
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("from Usuario where username =:username and password =:password");
@@ -45,9 +43,6 @@ public class UsuarioRepository{
 
         return usuario;
     }
-
-
-
 
     public List<Usuario> findAll() {
         Session session = sessionFactory.openSession();
